@@ -1,0 +1,40 @@
+{
+  "headerNavigation": [
+    {
+      "name": "Home",
+      "link": "/",
+      "external": false
+    },
+    {
+      "name": "About",
+      "link": "/about",
+      "external": false
+    },
+    {
+      "name": "Getting started",
+      "link": "/category/getting-started",
+      "external": false
+    }
+  ],
+  "footerNavigation": [{
+      "name": "Latest Posts",
+      "link": "/",
+      "external" : false
+    },
+    {
+      "name": "Facebook",
+      "link": "https://www.facebook.com",
+      "external": true
+    },
+    {
+      "name": "Gridsome",
+      "link": "https://www.gridsome.org",
+      "external": true
+    },
+    {
+      "name": "RSS",
+      "link": "/rss.xml",
+      "external": false
+    }
+  ]
+}

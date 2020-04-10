@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container {
+    @apply max-w-screen-xl;
+    @apply px-4;
+
+}
+
+
+.fade-enter-active,
+.fade-leave-active {
+    @apply transition-all;
+    @apply duration-200;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0; 
+}
+
+.post-card {
+    transition: all .25s cubic-bezier(.02, .01, .47, 1);
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    @apply relative;
+    @apply bg-white;
+    @apply border;
+    @apply border-gray-200;
+
+
+    .post-card-author {
+        @apply absolute;
+        @apply top-0;
+        @apply left-0;
+        @apply z-10;
+    }
+
+    .post-card-image {
+        @apply h-56;
+        @apply w-full;
+        @apply object-cover;
+        @apply rounded-lg;
+        @apply relative;
+        @apply rounded-b-none
+    }
+
+    .post-card-title {
+        @apply leading-8;
+        @apply text-2xl;
+    }
+
+    .post-card-excerpt {
+        @apply font-serif;
+    }
+
+    .post-card-content {
+        @apply bg-white;
+        @apply relative;
+        @apply flex-1;
+    }
+
+    .post-card-footer {
+        @apply absolute;
+        @apply bottom-0;
+    }
+}
+
+.tooltip {
+    
+    &[aria-hidden='true'] {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .15s, visibility .15s;
+    }
+
+    &[aria-hidden='false'] {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .15s;
+    }
+}
+
+.header {
+    min-height: 500px;
+}
+
+@media (max-width: 767px) {
+    .header {
+        min-height: 360px;
+    }
+}

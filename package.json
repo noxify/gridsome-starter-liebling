@@ -1,0 +1,31 @@
+{
+  "name": "gridsome-starter-liebling",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@gridsome/source-filesystem": "^0.6.2",
+    "@gridsome/transformer-remark": "^0.5.0",
+    "gridsome": "^0.7.13",
+    "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#master",
+    "hooper": "^0.3.4",
+    "minimist": "^1.2.5",
+    "node-sass": "^4.13.0",
+    "pluralize": "^8.0.0",
+    "sass-loader": "^8.0.0",
+    "tailwindcss": "^1.2.0",
+    "v-tooltip": "^2.0.3",
+    "vue-slick-carousel": "^1.0.5",
+    "vueperslides": "^2.8.3"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
+    "gridsome-plugin-tailwindcss": "^2.2.28"
+  }
+}
