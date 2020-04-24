@@ -1,3 +1,5 @@
+> **Current State: Work in Progress**
+
 # Gridsome Liebling Starter
 
 Grisome starter based on [Ghost Liebling](https://github.com/eddiesigner/liebling) and tailwindcss.
