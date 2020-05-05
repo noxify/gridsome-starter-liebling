@@ -1,43 +1,39 @@
 <template>
-  <div>
-  <div class="shadow-md">
-    <navbar-desktop 
-      @setTheme="setTheme" 
-      @openSearchModal="openSearchModal" 
-      @toggleSubNavigation="toggleSubNavigation"
-      :showNavigation="scrollPosition<headerHeight"
-      :theme="this.theme"/>
-    <navbar-mobile 
-      @setTheme="setTheme" 
-      @openSearchModal="openSearchModal" 
-      @openNavbarModal="openNavbarModal"
-      :showNavigation="scrollPosition<headerHeight"
-      :theme="this.theme"/>    
-    </div>
+  <div class="h-16">
+    <headroom :downTolerance="10" :upTolerance="20" :offset="15">
+      <navbar-desktop
+        @setTheme="setTheme"
+        @openSearchModal="openSearchModal"
+        :theme="this.theme"
+      />
 
-    <subnavigation v-if="showSubNavigation"></subnavigation>
+      <navbar-mobile
+        @setTheme="setTheme"
+        @openSearchModal="openSearchModal"
+        @openNavbarModal="openNavbarModal"
+        :theme="this.theme"
+      />
+
+
+    </headroom>
 
     <modal :showModal="this.showSearchModal" @close="closeSearchModal">
-
       <search-modal></search-modal>
-
     </modal>
 
     <modal :showModal="this.showNavbarModal" @close="closeNavbarModal">
-
       <navbar-modal></navbar-modal>
-
     </modal>
   </div>
 </template>
 
 <script>
-import NavbarDesktop from "~/components/Navbar/NavbarDesktop.vue"
-import NavbarMobile from "~/components/Navbar/NavbarMobile.vue"
-import Modal from "~/components/Modal/Modal.vue"
-import SearchModal from "~/components/Modal/SearchModal.vue"
-import NavbarModal from "~/components/Modal/NavbarMobileModal.vue"
-import Subnavigation from "~/components/Navbar/NavbarSubNavigation.vue"
+import NavbarDesktop from "~/components/Navbar/NavbarDesktop.vue";
+import NavbarMobile from "~/components/Navbar/NavbarMobile.vue";
+import Modal from "~/components/Modal/Modal.vue";
+import SearchModal from "~/components/Modal/SearchModal.vue";
+import NavbarModal from "~/components/Modal/NavbarMobileModal.vue";
+import { headroom } from "vue-headroom";
 
 export default {
   data: function() {
@@ -45,8 +41,6 @@ export default {
       theme: "light",
       showSearchModal: false,
       showNavbarModal: false,
-      showSubNavigation: false,
-      scrollPosition: 0,
       headerHeight: 100
     };
   },
@@ -56,34 +50,24 @@ export default {
     Modal,
     SearchModal,
     NavbarModal,
-    Subnavigation
+    headroom
   },
   methods: {
     setTheme(mode) {
       this.theme = mode;
     },
     openSearchModal() {
-      this.showSearchModal=true;
+      this.showSearchModal = true;
     },
     closeSearchModal() {
-      this.showSearchModal=false;
+      this.showSearchModal = false;
     },
     openNavbarModal() {
-      this.showNavbarModal=true;
+      this.showNavbarModal = true;
     },
     closeNavbarModal() {
-      this.showNavbarModal=false;
-    },
-    updateScroll() {
-      this.scrollPosition = window.scrollY;
-    },
-    toggleSubNavigation() {
-      this.showSubNavigation = !this.showSubNavigation
+      this.showNavbarModal = false;
     }
-  },
-  mounted() {
-    window.addEventListener("scroll", this.updateScroll);
-    
   }
 };
 </script>

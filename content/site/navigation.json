@@ -14,9 +14,26 @@
       "name": "Getting started",
       "link": "/category/getting-started",
       "external": false
+    },
+    {
+      "name": "More",
+      "link": "#",
+      "children": [
+        {
+          "name": "Sub Entry 1",
+          "link": "/about",
+          "external": false
+        },
+        {
+          "name": "Sub Entry 2",
+          "link": "/category/getting-started",
+          "external": false
+        }
+      ]
     }
   ],
-  "footerNavigation": [{
+  "footerNavigation": [
+    {
       "name": "Latest Posts",
       "link": "/",
       "external" : false

@@ -27,9 +27,11 @@
       <g-image :src="record.image" :alt="record.title" class="post-card-image"></g-image>
     </g-link>
     <div class="post-card-content h-full rounded-b-lg">
-      <g-link :to="record.category.path" class="flex-col relative flex justify-between px-6 pt-4">
+      <div class="flex-col relative flex justify-between px-6 pt-4">
+      <g-link :to="record.category.path">
         <p class="text-xs tracking-wide font-medium mt-3">{{ record.category.title }}</p>
       </g-link>
+      </div>
       <g-link :to="record.path" class="flex-col relative flex justify-between rounded-b-lg px-6 h-40 mt-2">
         <h3 class="post-card-title tracking-wide mt-0">{{ record.title }}</h3>
 

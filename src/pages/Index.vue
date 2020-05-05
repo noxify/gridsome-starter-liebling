@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div class="container mx-auto">
-      <div class="sm:pxi-0 mx-auto overflow-x-hidden">
+      <div class="mx-auto overflow-x-hidden">
         <!--div class="flex flex-wrap with-large pt-16 pb-16 mx-4 sm:-mx-4"-->
         <!--FeaturedCard v-if="$page.featured.totalCount>0" :records="$page.featured.edges"/ -->
 

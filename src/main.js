@@ -22,6 +22,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import vClickOutside from 'v-click-outside'
+
 
 config.autoAddCss = false;
 library.add(fas);
@@ -37,11 +39,14 @@ export default function (Vue, {
 
   Vue.component('font-awesome', FontAwesomeIcon)
 
+  Vue.use(vClickOutside)
+
   if( isClient ) {
     Vue.use(VTooltip, {
       defaultPlacement: 'top-end',
       defaultClass: 'bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs ml-2 mt-3',
       defaultBoundariesElement: document.body,
-    })
+    });
+
   }
 }

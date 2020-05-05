@@ -1,7 +1,7 @@
 <template>
  
   <nav
-      class="block flex items-center justify-between flex-wrap container mx-auto py-4 transition-opacity"
+      class="block md:hidden flex items-center justify-between flex-wrap container mx-auto py-4"
     >
       <div class="block flex-grow flex items-center w-auto">
         <div class="flex items-center flex-shrink-0 mr-6">

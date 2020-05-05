@@ -95,3 +95,46 @@
         min-height: 360px;
     }
 }
+
+.headroom {
+    z-index: 500 !important;  
+    @apply shadow-md;
+    @apply bg-white;
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+    Based on: https://codepen.io/nickelse/pen/YGPJQG
+    Influenced by: https://sproutsocial.com/
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+  /* #Mega Menu Styles
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .mega-menu {
+    left: 0;
+    top:0;
+    @apply mt-16;
+    @apply w-full;
+    @apply absolute;
+    @apply text-left;
+  }
+
+  .tooltip {
+  
+    &.popover {
+      
+    @apply bg-black;
+    @apply text-xs;
+    @apply px-2;
+    @apply leading-normal;
+    @apply py-1;
+    @apply rounded;
+    @apply absolute;
+    @apply text-gray-400;
+    @apply max-w-xs;
+    @apply ml-2;
+    @apply mt-3;
+    @apply z-100;
+  
+    }
+  }
