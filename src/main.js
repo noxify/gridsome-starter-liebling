@@ -3,7 +3,12 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 
-import VTooltip from 'v-tooltip'
+//import VTooltip from 'v-tooltip'
+import {
+  VTooltip,
+  VPopover,
+  VClosePopover
+} from 'v-tooltip'
 
 import '~/assets/scss/main.scss'
 
@@ -22,7 +27,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import vClickOutside from 'v-click-outside'
+import ClickOutside from 'v-click-outside'
 
 
 config.autoAddCss = false;
@@ -39,14 +44,21 @@ export default function (Vue, {
 
   Vue.component('font-awesome', FontAwesomeIcon)
 
-  Vue.use(vClickOutside)
-
+  Vue.use(ClickOutside)
+  
   if( isClient ) {
-    Vue.use(VTooltip, {
-      defaultPlacement: 'top-end',
-      defaultClass: 'bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs ml-2 mt-3',
-      defaultBoundariesElement: document.body,
-    });
+    // Vue.use(VTooltip, {
+    //   defaultPlacement: 'top-end',
+    //   defaultClass: 'bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs ml-2 mt-3',
+    //   defaultBoundariesElement: document.body,
+    // });
 
+    VTooltip.options.defaultPlacement = 'top-end';
+    VTooltip.options.defaultClass = 'bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs ml-2 mt-3';
+    VTooltip.options.defaultBoundariesElement = document.body;
+
+    Vue.directive('tooltip', VTooltip)
+    Vue.directive('close-popover', VClosePopover)
+    Vue.component('v-popover', VPopover)
   }
 }

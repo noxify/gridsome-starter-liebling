@@ -1,10 +1,11 @@
 <template>
   <div class="h-16">
-    <headroom :downTolerance="10" :upTolerance="20" :offset="15">
+    <headroom :downTolerance="10" :upTolerance="20" :offset="15" @unpin="navbarUnpinned=true" @pin="navbarUnpinned=false">
       <navbar-desktop
         @setTheme="setTheme"
         @openSearchModal="openSearchModal"
         :theme="this.theme"
+        :hideSubnav="this.navbarUnpinned"
       />
 
       <navbar-mobile
@@ -41,7 +42,8 @@ export default {
       theme: "light",
       showSearchModal: false,
       showNavbarModal: false,
-      headerHeight: 100
+      headerHeight: 100,
+      navbarUnpinned: false
     };
   },
   components: {

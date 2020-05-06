@@ -1,6 +1,6 @@
 <template>
-  <div class="post-card rounded-lg hover:shadow-xl" :id="record.id">
-    <div class="post-card-author pt-4 pl-4" v-tooltip="{content:this.authors, placement:'right'}">
+  <div class="post-card rounded-lg hover:shadow-xl z-100" :id="record.id">
+    <div class="post-card-author pt-4 pl-4" v-tooltip="{classes:'card-author-tooltip', content:this.authors, placement:'right'}">
       <g-link
         :to="record.author[0].path"
         @mouseover="showTooltip = true"
