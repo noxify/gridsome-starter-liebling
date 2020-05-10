@@ -1,34 +1,26 @@
 <template>
   <Layout>
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden pt-24">
-      <div class="mx-4 sm:mx-0">
-        <h1 class="pb-0 mb-0 text-5xl font-medium">{{ $page.category.title }}</h1>
-        <p class="text-gray-700 text-xl">
-          A collection of
-          <span
-            class="self-center"
-          >{{ $page.category.belongsTo.totalCount }} {{ postLabel }}</span>
-        </p>
+    <content-header :title="$page.category.title" :sub="subTitle"></content-header>
 
-        <div class="pt-8 border-b"></div>
-      </div>
+    <div class="container mx-auto overflow-x-hidden py-8">
+      <div class="mx-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 my-8">
+          <CardItem
+            v-for="edge in $page.category.belongsTo.edges"
+            :key="edge.node.id"
+            :record="edge.node"
+          />
+        </div>
 
-      <div class="flex flex-wrap pt-8 pb-8 mx-4 sm:-mx-4">
-        <CardItem
-          v-for="edge in $page.category.belongsTo.edges"
-          :key="edge.node.id"
-          :record="edge.node"
-        />
-      </div>
-
-      <div class="pagination flex justify-center mb-8">
-        <Pagination
-          :baseUrl="$page.category.path"
-          :currentPage="$page.category.belongsTo.pageInfo.currentPage"
-          :totalPages="$page.category.belongsTo.pageInfo.totalPages"
-          :maxVisibleButtons="5"
-          v-if="$page.category.belongsTo.pageInfo.totalPages > 1"
-        />
+        <div class="pagination flex justify-center mb-8">
+          <Pagination
+            :baseUrl="$page.category.path"
+            :currentPage="$page.category.belongsTo.pageInfo.currentPage"
+            :totalPages="$page.category.belongsTo.pageInfo.totalPages"
+            :maxVisibleButtons="5"
+            v-if="$page.category.belongsTo.pageInfo.totalPages > 1"
+          />
+        </div>
       </div>
     </div>
   </Layout>
@@ -39,7 +31,7 @@
     category(id: $id) {
       title
       path
-      belongsTo(perPage: 2, page: $page) @paginate {
+      belongsTo(perPage: 6, page: $page) @paginate {
         totalCount
         pageInfo {
           totalPages
@@ -48,21 +40,23 @@
         edges {
           node {
             ... on Blog {
+              id
               title
-              excerpt
-              image(width:800)
+              image(width: 800)
               path
               timeToRead
-              humanTime : created(format:"DD MMM YYYY")
-              datetime : created
+              featured
+              humanTime: created(format: "DD MMM YYYY")
+              datetime: created
               category {
                 id
                 title
+                path
               }
               author {
                 id
                 name
-                image(width:64, height:64, fit:inside)
+                image(width: 64, height: 64, fit: inside)
                 path
               }
             }
@@ -76,16 +70,21 @@
 <script>
 import CardItem from "~/components/Content/CardItem.vue";
 import Pagination from "~/components/Content/Pagination.vue";
+import ContentHeader from "@/components/Content/ContentHeader.vue";
 
 export default {
   components: {
     Pagination,
-    CardItem
+    CardItem,
+    ContentHeader
   },
   computed: {
     postLabel: function() {
       var pluralize = require("pluralize");
       return pluralize("post", this.$page.category.belongsTo.totalCount);
+    },
+    subTitle: function() {
+      return `A collection of ${this.$page.category.belongsTo.totalCount} ${this.postLabel}`;
     }
   },
   metaInfo() {

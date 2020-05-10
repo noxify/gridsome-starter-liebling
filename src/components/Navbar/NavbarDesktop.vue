@@ -1,9 +1,8 @@
 <template>
-  <div>
     <nav
       class="hidden md:block lg:block xl:block flex items-center justify-between flex-wrap container mx-auto py-3 z-20"
     >
-      <div class="block flex-grow flex items-center w-auto">
+      <div class="block flex-grow flex items-center w-auto mx-4">
         <div class="flex items-center flex-shrink-0 mr-6">
           <span class="font-semibold text-xl tracking-tight">{{ $static.metadata.siteName }}</span>
         </div>
@@ -94,7 +93,6 @@
         </div>
       </div>
     </nav>
-  </div>
 </template>
 
 <script>

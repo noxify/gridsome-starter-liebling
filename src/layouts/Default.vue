@@ -1,9 +1,10 @@
 <template>
   <div id="app" dark>
     <navbar></navbar>
-    
+
     <slot />
-    
+
+    <v-footer></v-footer>
   </div>
 </template>
 
@@ -17,9 +18,11 @@ query {
 
 <script>
 import Navbar from "~/components/Navbar/Navbar.vue";
+import VFooter from "~/components/Partials/Footer.vue";
 export default {
   components: {
-    Navbar
+    Navbar,
+    VFooter
   }
 };
 </script>

@@ -1,15 +1,13 @@
 <template>
   <Layout>
-    <div class="container mx-auto">
-      <div class="mx-auto overflow-x-hidden">
+      <div class="container mx-auto">
         <!--div class="flex flex-wrap with-large pt-16 pb-16 mx-4 sm:-mx-4"-->
         <!--FeaturedCard v-if="$page.featured.totalCount>0" :records="$page.featured.edges"/ -->
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 my-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 my-8 mx-4">
           <CardItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
         </div>
       </div>
-    </div>
   </Layout>
 </template>
 
@@ -29,6 +27,7 @@
           category {
             id
             title
+            path
           }
           author {
             id
@@ -58,6 +57,7 @@
           category {
             id
             title
+            path
           }
           author {
             id

@@ -20,15 +20,20 @@
       "link": "#",
       "children": [
         {
-          "name": "Sub Entry 1",
-          "link": "/about",
-          "external": false
+          "name": "Theme Repository",
+          "link": "https://www.github.com/noxify/gridsome-starter-liebling",
+          "external": true
         },
         {
-          "name": "Sub Entry 2",
-          "link": "/category/getting-started",
-          "external": false
-        }
+          "name": "Gridsome Docs",
+          "link": "https://www.gridsome.org/docs",
+          "external": true
+        },
+         {
+           "name": "Internal Page ( About )",
+           "link": "/about",
+           "external": false
+         }
       ]
     }
   ],
