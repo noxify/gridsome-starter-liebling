@@ -23,7 +23,7 @@
                 :title="navItem.name"
                 v-if="navItem.external==true && navItem.children.length <=0"
               >{{ navItem.name}}</a>
-
+              <ClientOnly>
               <v-popover 
                 placement="top" 
                 popoverClass="navbar-popover" 
@@ -54,6 +54,7 @@
                   </ul>
                 </template>
               </v-popover>
+              </ClientOnly>
             </li>
             <li class="px-4 py-1">
               <a role="button" 
@@ -72,7 +73,7 @@
                 class="p-6 mega-menu mb-16 border-t border-gray-200 shadow-xl bg-white transition-opacity" 
                 v-bind:class="{
                   'opacity-100' : showSubNavigation,
-                  'opacity-0' : !showSubNavigation
+                  'hidden opacity-0' : !showSubNavigation
               }">
                   <subnavigation/>
               </div>

@@ -4,7 +4,8 @@
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "prod": "python3 -m http.server --directory dist/"
   },
   "dependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
