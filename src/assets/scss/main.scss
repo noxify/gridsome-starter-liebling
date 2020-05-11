@@ -5,132 +5,132 @@
 @import 'node_modules/vue-slick-carousel/dist/vue-slick-carousel';
 
 .container {
-    @apply max-w-screen-xl;
-    @apply px-0;
+  @apply max-w-screen-xl;
+  @apply px-0;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-    @apply transition-all;
-    @apply duration-200;
+  @apply transition-all;
+  @apply duration-200;
 }
 
 .fade-enter,
 .fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 
 .featured-post-card {
-    transition: all .25s cubic-bezier(.02, .01, .47, 1);
+  transition: all .25s cubic-bezier(.02, .01, .47, 1);
 
-    &:hover {
-        transform: translateY(-5px);
-    }
+  &:hover {
+    transform: translateY(-5px);
+  }
 
-    .post-card-author {
-        @apply absolute;
-        @apply top-0;
-        @apply left-0;
-        @apply z-10;
-    }
+  .post-card-author {
+    @apply absolute;
+    @apply top-0;
+    @apply left-0;
+    @apply z-10;
+  }
 
-    .post-card-image {
-        @apply h-56;
-        @apply w-full;
-        @apply object-cover;
-        @apply rounded-lg;
-        @apply relative;
-        @apply rounded-b-none
-    }
+  .post-card-image {
+    @apply h-56;
+    @apply w-full;
+    @apply object-cover;
+    @apply rounded-lg;
+    @apply relative;
+    @apply rounded-b-none
+  }
 
-    .post-card-content {
-         @apply absolute;
-         @apply top-0;
-         @apply left-0;
-         @apply z-10;
-         @apply mt-20;
-         @apply ml-10;
-         @apply text-white;
-    }
+  .post-card-content {
+    @apply absolute;
+    @apply top-0;
+    @apply left-0;
+    @apply z-10;
+    @apply mt-20;
+    @apply ml-10;
+    @apply text-white;
+  }
 
-    .post-card-footer {
-        @apply absolute;
-        @apply bottom-0;
-        @apply left-0;
-        @apply text-white;
-        @apply ml-10;
-        @apply mb-10;
-        @apply text-sm;
-        @apply font-semibold;
+  .post-card-footer {
+    @apply absolute;
+    @apply bottom-0;
+    @apply left-0;
+    @apply text-white;
+    @apply ml-10;
+    @apply mb-10;
+    @apply text-sm;
+    @apply font-semibold;
 
-    }
+  }
 
 }
 
 .post-card {
-    transition: all .25s cubic-bezier(.02, .01, .47, 1);
+  transition: all .25s cubic-bezier(.02, .01, .47, 1);
 
-    &:hover {
-        transform: translateY(-5px);
-    }
+  &:hover {
+    transform: translateY(-5px);
+  }
 
+  @apply relative;
+  @apply bg-white;
+  @apply border;
+  @apply border-gray-200;
+
+
+  .post-card-author {
+    @apply absolute;
+    @apply top-0;
+    @apply left-0;
+    @apply z-10;
+  }
+
+  .post-card-image {
+    @apply h-56;
+    @apply w-full;
+    @apply object-cover;
+    @apply rounded-lg;
     @apply relative;
+    @apply rounded-b-none
+  }
+
+  .post-card-title {
+    @apply leading-8;
+    @apply text-2xl;
+  }
+
+  .post-card-excerpt {
+    @apply font-serif;
+  }
+
+  .post-card-content {
     @apply bg-white;
-    @apply border;
-    @apply border-gray-200;
+    @apply relative;
+    @apply flex-1;
+  }
 
-
-    .post-card-author {
-        @apply absolute;
-        @apply top-0;
-        @apply left-0;
-        @apply z-10;
-    }
-
-    .post-card-image {
-        @apply h-56;
-        @apply w-full;
-        @apply object-cover;
-        @apply rounded-lg;
-        @apply relative;
-        @apply rounded-b-none
-    }
-
-    .post-card-title {
-        @apply leading-8;
-        @apply text-2xl;
-    }
-
-    .post-card-excerpt {
-        @apply font-serif;
-    }
-
-    .post-card-content {
-        @apply bg-white;
-        @apply relative;
-        @apply flex-1;
-    }
-
-    .post-card-footer {
-        @apply absolute;
-        @apply bottom-0;
-    }
+  .post-card-footer {
+    @apply absolute;
+    @apply bottom-0;
+  }
 }
 
 .header {
-    min-height: 500px;
+  min-height: 500px;
 }
 
 @media (max-width: 767px) {
-    .header {
-        min-height: 360px;
-    }
+  .header {
+    min-height: 360px;
+  }
 }
 
 .headroom {
-    z-index: 500 !important;
-    @apply shadow-md;
-    @apply bg-white;
+  z-index: 500 !important;
+  @apply shadow-md;
+  @apply bg-white;
 }
 
 /* ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -142,13 +142,13 @@
 /* #Mega Menu Styles
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-  .mega-menu {
-    left: 0;
-    top: 0;
-    @apply mt-16;
-    @apply w-full;
-    @apply absolute;
-    @apply text-left;
+.mega-menu {
+  left: 0;
+  top: 0;
+  @apply mt-16;
+  @apply w-full;
+  @apply absolute;
+  @apply text-left;
 }
 
 /* ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -157,92 +157,124 @@
 
 .tooltip {
 
-    &[aria-hidden='true'] {
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity .15s, visibility .15s;
+  &[aria-hidden='true'] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .15s, visibility .15s;
+  }
+
+  &[aria-hidden='false'] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .15s;
+  }
+
+
+
+  &.card-author-tooltip {
+    @apply z-1000;
+    @apply bg-black;
+    @apply text-xs;
+    @apply px-2;
+    @apply leading-normal;
+    @apply py-1;
+    @apply rounded;
+    @apply absolute;
+    @apply text-gray-400;
+    @apply max-w-xs;
+    @apply ml-2;
+    @apply mt-3;
+
+    &::after,
+    &::before {
+      right: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
     }
 
-    &[aria-hidden='false'] {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity .15s;
+    &::after {
+      border-color: rgba(0, 0, 0, 0);
+      border-right-color: #000000;
+      border-width: 4px;
+      margin-top: -4px;
     }
 
-   
+    &::before {
+      border-color: rgba(0, 0, 0, 0);
+      border-right-color: #000;
+      border-width: 4px;
+      margin-top: -4px;
+    }
+  }
 
-    &.card-author-tooltip {
-        @apply z-1000;
-        @apply bg-black;
-        @apply text-xs;
-        @apply px-2;
-        @apply leading-normal;
-        @apply py-1;
-        @apply rounded;
-        @apply absolute;
-        @apply text-gray-400;
-        @apply max-w-xs;
-        @apply ml-2;
-        @apply mt-3;
+  &.navbar-popover {
 
-        &::after,
-        &::before {
-            right: 100%;
-            top: 50%;
-            border: solid transparent;
-            content: " ";
-            height: 0;
-            width: 0;
-            position: absolute;
-            pointer-events: none;
-        }
+    @apply bg-black;
+    @apply text-xs;
+    @apply px-2;
+    @apply leading-normal;
+    @apply py-1;
+    @apply rounded;
+    @apply absolute;
+    @apply text-gray-400;
+    @apply max-w-xs;
+    @apply ml-2;
+    @apply -mt-3;
+    @apply z-1000;
 
-        &::after {
-            border-color: rgba(0, 0, 0, 0);
-            border-right-color: #000000;
-            border-width: 4px;
-            margin-top: -4px;
-        }
+    &::after {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      @apply h-0;
+      @apply w-0;
+      pointer-events: none;
+      @apply absolute;
+      @apply border-8;
+      border-bottom-color: #000;
 
-        &::before {
-            border-color: rgba(0, 0, 0, 0);
-            border-right-color: #000;
-            border-width: 4px;
-            margin-top: -4px;
-        }
+      margin-left: -8px;
     }
 
-    &.navbar-popover {
+  }
 
-        @apply bg-black;
-        @apply text-xs;
-        @apply px-2;
-        @apply leading-normal;
-        @apply py-1;
-        @apply rounded;
-        @apply absolute;
-        @apply text-gray-400;
-        @apply max-w-xs;
-        @apply ml-2;
-        @apply -mt-3;
-        @apply z-1000;
+  &.mobile-navbar-popover {
 
-        &::after {
-            bottom: 100%;
-            left: 50%;
-            border: solid transparent;
-            content: " ";
-            @apply h-0;
-            @apply w-0;
-            pointer-events: none;
-            @apply absolute;
-            @apply border-8;
-            border-bottom-color: #000;
+    @apply bg-black;
+    @apply text-xs;
+    @apply px-2;
+    @apply leading-normal;
+    @apply py-1;
+    @apply rounded;
+    @apply absolute;
+    @apply text-gray-400;
+    @apply max-w-xs;
+    @apply ml-2;
+    @apply -mt-3;
+    @apply z-1000;
 
-            margin-left: -8px;
-        }
+    &::after {
+      right: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      @apply h-0;
+      @apply w-0;
+      pointer-events: none;
+      @apply absolute;
+      @apply border-8;
+      border-right-color: #000;
 
+      margin-left: -8px;
     }
+
+  }
 }
 
 /* ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -250,17 +282,17 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .slick-list {
-    @apply h-full;
-    @apply rounded-lg;
+  @apply h-full;
+  @apply rounded-lg;
 
-    div:not(.post-card-author):not(.featured-label):not(.post-card-content):not(.post-card-footer) {
-        @apply h-full;
-    }
+  div:not(.post-card-author):not(.featured-label):not(.post-card-content):not(.post-card-footer) {
+    @apply h-full;
+  }
 }
 
 .slick-arrow {
-    @apply absolute;
-    @apply bottom-0;
-    @apply right-0;
-    @apply text-white;
+  @apply absolute;
+  @apply bottom-0;
+  @apply right-0;
+  @apply text-white;
 }

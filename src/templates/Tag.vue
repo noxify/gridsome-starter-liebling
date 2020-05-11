@@ -1,26 +1,24 @@
 <template>
   <Layout>
-    <content-header :title="page.tag.title" :sub="subTitle"></content-header>
+    <content-header :title="$page.tag.title" :sub="subTitle"></content-header>
 
-    <div class="container mx-auto overflow-x-hidden py-8">
-      <div class="mx-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 my-8">
-          <CardItem
-            v-for="edge in $page.tag.belongsTo.edges"
-            :key="edge.node.id"
-            :record="edge.node"
-          />
-        </div>
+    <div class="container mx-auto">
+      <div class="flex flex-wrap my-4">
+        <CardItem
+          v-for="edge in $page.tag.belongsTo.edges"
+          :key="edge.node.id"
+          :record="edge.node"
+        />
+      </div>
 
-        <div class="pagination flex justify-center mb-8">
-          <Pagination
-            :baseUrl="$page.tag.path"
-            :currentPage="$page.tag.belongsTo.pageInfo.currentPage"
-            :totalPages="$page.tag.belongsTo.pageInfo.totalPages"
-            :maxVisibleButtons="5"
-            v-if="$page.tag.belongsTo.pageInfo.totalPages > 1"
-          />
-        </div>
+      <div class="pagination flex justify-center mb-8">
+        <Pagination
+          :baseUrl="$page.tag.path"
+          :currentPage="$page.tag.belongsTo.pageInfo.currentPage"
+          :totalPages="$page.tag.belongsTo.pageInfo.totalPages"
+          :maxVisibleButtons="5"
+          v-if="$page.tag.belongsTo.pageInfo.totalPages > 1"
+        />
       </div>
     </div>
   </Layout>
