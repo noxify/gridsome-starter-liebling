@@ -1,26 +1,18 @@
 <template>
   <Layout>
-    <div class="header relative" id="header">
-      <g-image
-        :src="$page.author.cover"
-        width="2000"
-        class="object-cover w-full absolute -z-10 h-full w-full"
-      ></g-image>
-
-      <div class="container w-full mx-auto flex flex-wrap py-12 md:py-24 text-white tracking-wider">
-        <div class="items-center mx-auto p-0">
+    <content-header :image="$page.author.cover" :staticImage="false">
+      <div class="text-center text-white bg-gray-800 bg-opacity-50 lg:py-32 md:py-24 sm:py-16 py-8">
+        <div class="w-full">
           <g-image
             :src="$page.author.image"
             width="100"
             height="100"
-            class="md:h-32 md:w-32 h-24 w-24 rounded-full bg-white border-4 border-white self-center"
+            class="md:h-32 md:w-32 h-24 w-24 rounded-full bg-white border-4 border-white mx-auto"
           ></g-image>
         </div>
         <div class="w-full text-center pb-5">
-          <h2
-            class="py-4 mb-0 text-2xl md:text-3xl tracking-normal font-bold"
-          >{{ $page.author.name}}</h2>
-          <span class="text-lg">{{ $page.author.bio }}</span>
+          <h2 class="sm:text-5xl text-3xl font-extrabold">{{ $page.author.name }}</h2>
+          <p class="sm:text-xl font-sans">{{ $page.author.bio }}</p>
         </div>
         <div class="w-full text-center">
           {{ $page.author.belongsTo.totalCount }} {{ postLabel }}
@@ -53,9 +45,10 @@
           </a>
         </div>
       </div>
-    </div>
+    </content-header>
+
     <div class="container mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 my-8">
+      <div class="flex flex-wrap my-4">
         <CardItem
           v-for="edge in $page.author.belongsTo.edges"
           :key="edge.node.id"
@@ -96,21 +89,23 @@
         edges {
           node {
             ... on Blog {
+              id
               title
-              excerpt
-              image(width:800)
+              image(width: 800)
               path
               timeToRead
-              humanTime : created(format:"DD MMM YYYY")
-              datetime : created
+              featured
+              humanTime: created(format: "DD MMM YYYY")
+              datetime: created
               category {
                 id
                 title
+                path
               }
               author {
                 id
                 name
-                image(width:64, height:64, fit:inside)
+                image(width: 64, height: 64, fit: inside)
                 path
               }
             }
@@ -124,11 +119,13 @@
 <script>
 import CardItem from "~/components/Content/CardItem.vue";
 import Pagination from "~/components/Content/Pagination.vue";
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
 
 export default {
   components: {
     Pagination,
-    CardItem
+    CardItem,
+    ContentHeader
   },
   computed: {
     postLabel: function() {

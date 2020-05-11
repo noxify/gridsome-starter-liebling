@@ -7,7 +7,6 @@
       </content-header>
 
       <div class="container mx-auto">
-        <!--div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 my-8 mx-4"-->
           <div class="flex flex-wrap my-4">
 
           <FeaturedCard v-if="$page.featured.totalCount>0" :records="$page.featured.edges"/>

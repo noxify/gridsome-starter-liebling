@@ -7,22 +7,29 @@
 
     <div v-if="hasImage" class="relative mt-0 h-auto">
       <g-image
-        v-if="hasImage"
+        v-if="hasImage && staticImage"
         :src="require(`!!assets-loader!@pageImage/${image}`)"
         width="1400"
         height="400"
         class="object-cover absolute -z-10 h-full w-full"
       ></g-image>
 
-      <div class="text-center text-white bg-gray-800 bg-opacity-50 lg:py-48 md:py-32 sm:py-24 py-16">
-        <h2 v-if="title!=null" class="sm:text-5xl text-3xl font-extrabold">
-            {{ title }}
-        </h2>
-        <p v-if="sub!=null" class="sm:text-xl font-sans">
-            {{ sub }}
-        </p>
-      </div>
+      <g-image
+        v-if="hasImage && !staticImage"
+        :src="image"
+        width="1400"
+        height="400"
+        class="object-cover absolute -z-10 h-full w-full"
+      ></g-image>
 
+      <slot>
+        <div
+          class="text-center text-white bg-gray-800 bg-opacity-50 lg:py-48 md:py-32 sm:py-24 py-16"
+        >
+          <h2 v-if="title!=null" class="sm:text-5xl text-3xl font-extrabold">{{ title }}</h2>
+          <p v-if="sub!=null" class="sm:text-xl font-sans">{{ sub }}</p>
+        </div>
+      </slot>
     </div>
   </div>
 </template>
@@ -39,8 +46,12 @@ export default {
       default: null
     },
     image: {
-      type: String,
+      type: String | Object,
       default: null
+    },
+    staticImage: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {

@@ -2,25 +2,23 @@
   <Layout>
     <content-header :title="$page.category.title" :sub="subTitle"></content-header>
 
-    <div class="container mx-auto overflow-x-hidden py-8">
-      <div class="mx-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 my-8">
-          <CardItem
-            v-for="edge in $page.category.belongsTo.edges"
-            :key="edge.node.id"
-            :record="edge.node"
-          />
-        </div>
+    <div class="container mx-auto">
+      <div class="flex flex-wrap my-4">
+        <CardItem
+          v-for="edge in $page.category.belongsTo.edges"
+          :key="edge.node.id"
+          :record="edge.node"
+        />
+      </div>
 
-        <div class="pagination flex justify-center mb-8">
-          <Pagination
-            :baseUrl="$page.category.path"
-            :currentPage="$page.category.belongsTo.pageInfo.currentPage"
-            :totalPages="$page.category.belongsTo.pageInfo.totalPages"
-            :maxVisibleButtons="5"
-            v-if="$page.category.belongsTo.pageInfo.totalPages > 1"
-          />
-        </div>
+      <div class="pagination flex justify-center mb-8">
+        <Pagination
+          :baseUrl="$page.category.path"
+          :currentPage="$page.category.belongsTo.pageInfo.currentPage"
+          :totalPages="$page.category.belongsTo.pageInfo.totalPages"
+          :maxVisibleButtons="5"
+          v-if="$page.category.belongsTo.pageInfo.totalPages > 1"
+        />
       </div>
     </div>
   </Layout>
