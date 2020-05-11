@@ -70,7 +70,7 @@
 <script>
 import CardItem from "~/components/Content/CardItem.vue";
 import Pagination from "~/components/Content/Pagination.vue";
-import ContentHeader from "@/components/Content/ContentHeader.vue";
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
 
 export default {
   components: {

@@ -1,50 +1,56 @@
 <template>
-  <div class="post-card rounded-lg hover:shadow-xl z-100" :id="record.id">
-    <div class="post-card-author pt-4 pl-4" v-tooltip="{classes:'card-author-tooltip', content:this.authors, placement:'right'}">
-      <g-link
-        :to="record.author[0].path"
-        @mouseover="showTooltip = true"
-        @mouseleave="showTooltip = false"
-        @mouseover.native="showTooltip = true"
-        @mouseleave.native="showTooltip = false"
+  <div class="w-full md:w-1/2 lg:w-1/3 px-4 my-4">
+    <div class="post-card rounded-lg hover:shadow-xl z-100" :id="record.id">
+      <div
+        class="post-card-author pt-4 pl-4"
+        v-tooltip="{classes:'card-author-tooltip', content:this.authors, placement:'right'}"
       >
-        <g-image
-          :src="record.author[0].image"
-          :alt="record.author[0].name"
-          class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"
-        />
-      </g-link>
-    </div>
-
-    <g-link :to="record.path" class="post-card-image-link">
-      <div v-if="record.featured" class="absolute top-0 right-0 pr-4 pt-4 z-10">
-        <span
-          class="w-6 h-6 relative block text-center leading-tight bg-white border border-gray-300 text-black rounded-full"
+        <g-link
+          :to="record.author[0].path"
+          @mouseover="showTooltip = true"
+          @mouseleave="showTooltip = false"
+          @mouseover.native="showTooltip = true"
+          @mouseleave.native="showTooltip = false"
         >
-          <font-awesome :icon="['fas', 'star']" size="xs"></font-awesome>
-        </span>
+          <g-image
+            :src="record.author[0].image"
+            :alt="record.author[0].name"
+            class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"
+          />
+        </g-link>
       </div>
-      <g-image :src="record.image" :alt="record.title" class="post-card-image"></g-image>
-    </g-link>
-    <div class="post-card-content h-full rounded-b-lg">
-      <div class="flex-col relative flex justify-between px-6 pt-4">
-      <p class="text-xs tracking-wide font-medium mt-3">
-      <g-link :to="record.category.path">
-        {{ record.category.title }}
-      </g-link>
-      </p>
-      </div>
-      <g-link :to="record.path" class="flex-col relative flex justify-between rounded-b-lg px-6 h-40 mt-2">
-        <h3 class="post-card-title tracking-wide mt-0">{{ record.title }}</h3>
 
-        <div class="text-xs leading-none absolute bottom-0 pb-6">
-            <p>  
+      <g-link :to="record.path" class="post-card-image-link">
+        <div v-if="record.featured" class="absolute top-0 right-0 pr-4 pt-4 z-10">
+          <span
+            class="w-6 h-6 relative block text-center leading-tight bg-white border border-gray-300 text-black rounded-full"
+          >
+            <font-awesome :icon="['fas', 'star']" size="xs"></font-awesome>
+          </span>
+        </div>
+        <g-image :src="record.image" :alt="record.title" class="post-card-image"></g-image>
+      </g-link>
+      <div class="post-card-content h-full rounded-b-lg">
+        <div class="flex-col relative flex justify-between px-6 pt-4">
+          <p class="text-xs tracking-wide font-medium mt-3">
+            <g-link :to="record.category.path">{{ record.category.title }}</g-link>
+          </p>
+        </div>
+        <g-link
+          :to="record.path"
+          class="flex-col relative flex justify-between rounded-b-lg px-6 h-40 mt-2"
+        >
+          <h3 class="post-card-title tracking-wide mt-0">{{ record.title }}</h3>
+
+          <div class="text-xs leading-none absolute bottom-0 pb-6">
+            <p>
               <time :datetime="record.datetime">{{ record.humanTime }}</time>
               &nbsp;&bull;&nbsp;
               {{ record.timeToRead }} min read
             </p>
           </div>
-      </g-link>
+        </g-link>
+      </div>
     </div>
   </div>
 </template>

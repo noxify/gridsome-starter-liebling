@@ -1,6 +1,11 @@
 module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        '128' : '32rem',
+        'half-screen' :  '50vh'
+      }
+    },
     zIndex: {
       '-10': '-10',
       '0': 0,

@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'node_modules/vue-slick-carousel/dist/vue-slick-carousel';
 
 .container {
     @apply max-w-screen-xl;
     @apply px-0;
-
 }
-
 
 .fade-enter-active,
 .fade-leave-active {
@@ -19,6 +18,53 @@
 .fade-enter,
 .fade-leave-to {
     opacity: 0;
+}
+
+.featured-post-card {
+    transition: all .25s cubic-bezier(.02, .01, .47, 1);
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    .post-card-author {
+        @apply absolute;
+        @apply top-0;
+        @apply left-0;
+        @apply z-10;
+    }
+
+    .post-card-image {
+        @apply h-56;
+        @apply w-full;
+        @apply object-cover;
+        @apply rounded-lg;
+        @apply relative;
+        @apply rounded-b-none
+    }
+
+    .post-card-content {
+         @apply absolute;
+         @apply top-0;
+         @apply left-0;
+         @apply z-10;
+         @apply mt-20;
+         @apply ml-10;
+         @apply text-white;
+    }
+
+    .post-card-footer {
+        @apply absolute;
+        @apply bottom-0;
+        @apply left-0;
+        @apply text-white;
+        @apply ml-10;
+        @apply mb-10;
+        @apply text-sm;
+        @apply font-semibold;
+
+    }
+
 }
 
 .post-card {
@@ -95,7 +141,8 @@
 
 /* #Mega Menu Styles
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.mega-menu {
+
+  .mega-menu {
     left: 0;
     top: 0;
     @apply mt-16;
@@ -103,7 +150,6 @@
     @apply absolute;
     @apply text-left;
 }
-
 
 /* ––––––––––––––––––––––––––––––––––––––––––––––––––
     Tooltip and Popover 
@@ -123,9 +169,11 @@
         transition: opacity .15s;
     }
 
+   
+
     &.card-author-tooltip {
         @apply z-1000;
-        @apply bg-black; 
+        @apply bg-black;
         @apply text-xs;
         @apply px-2;
         @apply leading-normal;
@@ -137,7 +185,8 @@
         @apply ml-2;
         @apply mt-3;
 
-        &::after, &::before {
+        &::after,
+        &::before {
             right: 100%;
             top: 50%;
             border: solid transparent;
@@ -194,4 +243,24 @@
         }
 
     }
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+    Slider
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.slick-list {
+    @apply h-full;
+    @apply rounded-lg;
+
+    div:not(.post-card-author):not(.featured-label):not(.post-card-content):not(.post-card-footer) {
+        @apply h-full;
+    }
+}
+
+.slick-arrow {
+    @apply absolute;
+    @apply bottom-0;
+    @apply right-0;
+    @apply text-white;
 }

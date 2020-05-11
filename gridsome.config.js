@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Gridsome',
+  siteDescription: "An open-source framework to generate awesome pages",
   plugins: [{
       use: 'gridsome-plugin-tailwindcss',
       options: {
@@ -33,7 +34,7 @@ module.exports = {
         typeName: 'Author',
         path: './content/author/*.md'
       }
-    }, 
+    },
     {
       use: '@gridsome/source-filesystem',
       options: {
@@ -54,25 +55,28 @@ module.exports = {
     }
   ],
   transformers: {
-      remark: {
-        plugins: []
-      }
-    },
-    templates: {
-      Blog: [{
-        path: '/:title'
-      }],
-      Category: [{
-        path: '/category/:title',
-        component: '~/templates/Category.vue'
-      }],
-      Author: [{
-        path: '/author/:name',
-        component: '~/templates/Author.vue'
-      }],
-      Tag: [{
-        path: '/tags/:title',
-        component: '~/templates/Tag.vue'
-      }],
+    remark: {
+      plugins: []
     }
+  },
+  templates: {
+    Blog: [{
+      path: '/:title'
+    }],
+    Category: [{
+      path: '/category/:title',
+      component: '~/templates/Category.vue'
+    }],
+    Author: [{
+      path: '/author/:name',
+      component: '~/templates/Author.vue'
+    }],
+    Tag: [{
+      path: '/tags/:title',
+      component: '~/templates/Tag.vue'
+    }],
+  },
+  chainWebpack: config => {
+      config.resolve.alias.set('@pageImage', '@/assets/images');
+  }
 }

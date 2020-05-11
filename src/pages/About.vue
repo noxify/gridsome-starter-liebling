@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import ContentHeader from "@/components/Content/ContentHeader.vue";
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
 export default {
   data() {
     return {

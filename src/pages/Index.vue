@@ -1,10 +1,18 @@
 <template>
   <Layout>
-      <div class="container mx-auto">
-        <!--div class="flex flex-wrap with-large pt-16 pb-16 mx-4 sm:-mx-4"-->
-        <!--FeaturedCard v-if="$page.featured.totalCount>0" :records="$page.featured.edges"/ -->
+      <content-header 
+        :title="$static.metadata.siteName" 
+        :sub="$static.metadata.siteDescription"
+        image="phoenix-han-Nqdh0G8rdCc-unsplash.jpg">
+      </content-header>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 my-8 mx-4">
+      <div class="container mx-auto">
+        <!--div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 my-8 mx-4"-->
+          <div class="flex flex-wrap my-4">
+
+          <FeaturedCard v-if="$page.featured.totalCount>0" :records="$page.featured.edges"/>
+
+        
           <CardItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
         </div>
       </div>
@@ -71,16 +79,29 @@
   }
 </page-query>
 
+<static-query>
+query {
+  metadata {
+    siteName
+    siteDescription
+  }
+}
+</static-query>
+
 <script>
 import CardItem from "~/components/Content/CardItem.vue";
 import FeaturedCard from "~/components/Content/FeaturedCard.vue";
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
+
+
 export default {
   metaInfo: {
     title: "Hello, world!"
   },
   components: {
     CardItem,
-    FeaturedCard
+    FeaturedCard,
+    ContentHeader
   }
 };
 </script>
