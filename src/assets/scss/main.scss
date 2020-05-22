@@ -21,6 +21,23 @@
 }
 
 .featured-post-card {
+
+  .slick-list {
+    @apply h-full;
+    @apply rounded-lg;
+
+    div:not(.post-card-author):not(.featured-label):not(.post-card-content):not(.post-card-footer) {
+      @apply h-full;
+    }
+  }
+
+  .slick-arrow {
+    @apply absolute;
+    @apply bottom-0;
+    @apply right-0;
+    @apply text-white;
+  }
+
   transition: all .25s cubic-bezier(.02, .01, .47, 1);
 
   &:hover {
@@ -119,6 +136,12 @@
 
 .header {
   min-height: 500px;
+}
+
+.mobileSubnav {
+  @apply absolute;
+  @apply w-full;
+  @apply -mx-2;
 }
 
 @media (max-width: 767px) {
@@ -281,18 +304,3 @@
     Slider
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.slick-list {
-  @apply h-full;
-  @apply rounded-lg;
-
-  div:not(.post-card-author):not(.featured-label):not(.post-card-content):not(.post-card-footer) {
-    @apply h-full;
-  }
-}
-
-.slick-arrow {
-  @apply absolute;
-  @apply bottom-0;
-  @apply right-0;
-  @apply text-white;
-}

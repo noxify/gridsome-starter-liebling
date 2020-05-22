@@ -1,96 +1,136 @@
 <template>
-  
-  <div class="container mx-auto w-full flex flex-wrap justify-between mx-2">
-        <div class="w-full mb-8">
-            <h2 class="font-thin text-xl">Recent articles</h2>
-        </div>
-        <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-            <div class="flex items-center">
-                <svg class="h-8 mb-3 mr-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path
-                        d="M3 6c0-1.1.9-2 2-2h8l4-4h2v16h-2l-4-4H5a2 2 0 0 1-2-2H1V6h2zm8 9v5H8l-1.67-5H5v-2h8v2h-2z" />
-                </svg>
-                <h3 class="font-bold text-xl text-bold mb-2">Heading 1</h3>
-            </div>
-            <p class="text-sm">Quarterly sales are at an all-time low create spaces to explore the accountable talk and
-                blind vampires.</p>
-            <div class="flex items-center py-3">
-                <svg class="h-6 pr-3 fill-current text-blue-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path
-                        d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z" />
-                </svg>
-                <a href="#" class="bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
-            </div>
-        </ul>
-        <ul
-            class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-            <div class="flex items-center">
-                <svg class="h-8 mb-3 mr-3 fill-current text-white" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20">
-                    <path
-                        d="M4.13 12H4a2 2 0 1 0 1.8 1.11L7.86 10a2.03 2.03 0 0 0 .65-.07l1.55 1.55a2 2 0 1 0 3.72-.37L15.87 8H16a2 2 0 1 0-1.8-1.11L12.14 10a2.03 2.03 0 0 0-.65.07L9.93 8.52a2 2 0 1 0-3.72.37L4.13 12zM0 4c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z" />
-                </svg>
-                <h3 class="font-bold text-xl text-bold mb-2">Heading 2</h3>
-            </div>
-            <p class="text-sm">Prioritize these line items game-plan draw a line in the sand come up with something
-                buzzworthy UX upstream selling.</p>
-            <div class="flex items-center py-3">
-                <svg class="h-6 pr-3 fill-current text-blue-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path
-                        d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z" />
-                </svg>
-                <a href="#" class="bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
-            </div>
-        </ul>
-        <ul
-            class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-b-0 sm:border-r md:border-b-0 pb-6 pt-6 lg:pt-3">
-            <div class="flex items-center">
-                <svg class="h-8 mb-3 mr-3 fill-current text-white" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20">
-                    <path
-                        d="M2 4v14h14v-6l2-2v10H0V2h10L8 4H2zm10.3-.3l4 4L8 16H4v-4l8.3-8.3zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z" />
-                </svg>
-                <h3 class="font-bold text-xl text-bold mb-2">Heading 3</h3>
-            </div>
-            <p class="text-sm">This proposal is a win-win situation which will cause a stellar paradigm shift, let's
-                touch base off-line before we fire the new ux experience.</p>
-            <div class="flex items-center py-3">
-                <svg class="h-6 pr-3 fill-current text-blue-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path
-                        d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z" />
-                </svg>
-                <a href="#" class="bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
-            </div>
-        </ul>
-        <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
-            <div class="flex items-center">
-                <svg class="h-8 mb-3 mr-3 fill-current text-white" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20">
-                    <path
-                        d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
-                </svg>
-                <h3 class="font-bold text-xl text-bold mb-2">Heading 4</h3>
-            </div>
-            <p class="text-sm">This is a no-brainer to wash your face, or we need to future-proof this high performance
-                keywords granularity.</p>
-            <div class="flex items-center py-3">
-                <svg class="h-6 pr-3 fill-current text-blue-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path
-                        d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z" />
-                </svg>
-                <a href="#" class="bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
-            </div>
-        </ul>
-    </div>
+  <div class="container mx-auto">
+    <div class="flex flex-wrap my-4 mx-4">
+      <div class="w-full mb-2">
+        <h2 class="font-thin text-xl mb-1">Recent articles</h2>
 
+        <div class="w-full">
+          <VueSlickCarousel :arrows="true" :dots="false" class="-mx-4" v-bind="sliderSettings">
+            <div v-for="edge in $static.recent.edges" :key="edge.node.id" class="px-4">
+              <g-link :to="edge.node.path">
+                <div :id="edge.node.id" class>
+                  <g-image
+                    :src="edge.node.image"
+                    :alt="edge.node.title"
+                    class="rounded-lg h-32 object-cover w-full"
+                  ></g-image>
+
+                  <div class="post-card-content">
+                    <h3
+                      class="tracking-wider mt-3 mb-3 text-lg font-light max-w-xl"
+                    >{{ edge.node.title }}</h3>
+                  </div>
+
+                  <div class="post-card-footer">
+                    <p class="text-xs">
+                      <time :datetime="edge.node.datetime">{{ edge.node.humanTime }}</time>
+                      &nbsp;&bull;&nbsp;
+                      {{ edge.node.timeToRead }} min read
+                    </p>
+                  </div>
+                </div>
+              </g-link>
+            </div>
+          </VueSlickCarousel>
+        </div>
+      </div>
+      <div class="w-full mb-8">
+        <h2 class="font-thin text-xl">Tags</h2>
+
+        <ul class="flex flex-wrap">
+          <li class="mr-4 my-2 px-2 py-1 hover:text-blue-500 text-center bg-gray-200 rounded-lg" v-for="tag in $static.tags.edges" :key="tag.node.id">
+            <g-link :to="tag.node.path">{{ tag.node.title }}</g-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {
+import VueSlickCarousel from "vue-slick-carousel";
 
-}
+export default {
+  components: {
+    VueSlickCarousel
+  },
+  data() {
+    return {
+      sliderSettings: {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              arrows: false,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              dots: false,
+              infinite: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              arrows: false,
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              initialSlide: 2,
+              dots: false,
+              infinite: true
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: false,
+              infinite: true
+            }
+          }
+        ]
+      }
+    };
+  }
+};
 </script>
 
 <style>
-
 </style>
+
+<static-query>
+
+query {
+  tags: allTag {
+    edges {
+      node {
+        title
+        path
+      }
+    }
+  },
+  recent : allBlog(limit: 4, sort: { by: "created", order: DESC }) {
+    edges {
+      node {
+        id
+        title
+        path
+        image(width:230, height:130)
+        humanTime: created(format: "DD MMM YYYY")
+        datetime: created
+        timeToRead
+      }
+    }
+  }
+}
+
+
+</static-query>

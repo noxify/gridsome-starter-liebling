@@ -2,7 +2,7 @@
   <Transition name="fade">
     <div
       v-if="showModal"
-      class="fixed inset-0 w-full h-full flex items-center justify-center bg-white z-1000"
+      class="fixed inset-0 w-full h-full overflow-y-auto flex items-center justify-center bg-white z-1000"
       @click.self="close"
     >
       <div class="relative w-full h-full bg-white p-8">
@@ -13,7 +13,7 @@
         >
           <font-awesome :icon="['fas', 'times']"></font-awesome>
         </button>
-        <div class="mt-12 md:mt-16">
+        <div class="mt-12 md:mt-16 overflow-y-auto">
           <slot />
         </div>
       </div>

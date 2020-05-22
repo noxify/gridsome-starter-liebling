@@ -69,12 +69,15 @@
               </a>
 
               <div v-click-outside="onClickOutside"
-                class="p-6 mega-menu mb-16 border-t border-gray-200 shadow-xl bg-white transition-opacity" 
+                class="py-4 mega-menu mb-16 border-t border-gray-200 shadow-xl bg-white" 
                 v-bind:class="{
-                  'opacity-100' : showSubNavigation,
-                  'hidden opacity-0' : !showSubNavigation
+                  '' : showSubNavigation,
+                  'hidden' : !showSubNavigation
               }">
-                  <subnavigation/>
+
+                <div>
+                <subnavigation/>
+                </div>
               </div>
                
             </li>
