@@ -1,10 +1,33 @@
+//tailwind border color plugin powered by
+//https://github.com/tailwindcss/tailwindcss/pull/560#issuecomment-503222143
+var _ = require('lodash')
+var flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default
+
+
 module.exports = {
   theme: {
     extend: {
       height: {
-        '128' : '32rem',
-        'half-screen' :  '50vh'
+        '128': '32rem',
+        'half-screen': '50vh'
       }
+    },
+    fontFamily: {
+      sans: [
+        '"Source Sans Pro"',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        '"Noto Sans"',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
+      serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
     },
     zIndex: {
       '-10': '-10',
@@ -36,7 +59,84 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    function ({
+      addBase,
+      config
+    }) {
+
+      addBase({
+        'h1': {
+          fontSize: config('theme.fontSize.5xl'),
+          fontWeight: config('theme.fontWeight.bold'),
+          fontFamily: config('theme.fontFamily.sans').join(', '),
+          marginTop: config('theme.margin.4'),
+          marginBottom: config('theme.margin.4')
+        },
+        'h2': {
+          fontSize: config('theme.fontSize.4xl'),
+          fontWeight: config('theme.fontWeight.medium'),
+          fontFamily: config('theme.fontFamily.sans').join(', '),
+          marginTop: config('theme.margin.4'),
+          marginBottom: config('theme.margin.4')
+        },
+        'h3': {
+          fontSize: config('theme.fontSize.3xl'),
+          fontWeight: config('theme.fontWeight.medium'),
+          fontFamily: config('theme.fontFamily.sans').join(', '),
+          marginTop: config('theme.margin.4'),
+          marginBottom: config('theme.margin.4')
+        },
+        'h4': {
+          fontSize: config('theme.fontSize.2xl'),
+          fontWeight: config('theme.fontWeight.medium'),
+          fontFamily: config('theme.fontFamily.sans').join(', '),
+          marginTop: config('theme.margin.4'),
+          marginBottom: config('theme.margin.4')
+        },
+        'h5': {
+          fontSize: config('theme.fontSize.xl'),
+          fontWeight: config('theme.fontWeight.medium'),
+          fontFamily: config('theme.fontFamily.sans').join(', '),
+          marginTop: config('theme.margin.4'),
+          marginBottom: config('theme.margin.4')
+        },
+        'h6': {
+          fontSize: config('theme.fontSize.lg'),
+          fontWeight: config('theme.fontWeight.medium'),
+          fontFamily: config('theme.fontFamily.sans').join(', '),
+          marginTop: config('theme.margin.4'),
+          marginBottom: config('theme.margin.4')
+        },
+      })
+    },
+    function ({
+      addUtilities,
+      e,
+      theme,
+      variants
+    }) {
+      const colors = flattenColorPalette(theme('borderColor'))
+
+      const utilities = _.flatMap(_.omit(colors, 'default'), (value, modifier) => ({
+
+        [`.${e(`border-t-${modifier}`)}`]: {
+          borderTopColor: `${value}`
+        },
+        [`.${e(`border-r-${modifier}`)}`]: {
+          borderRightColor: `${value}`
+        },
+        [`.${e(`border-b-${modifier}`)}`]: {
+          borderBottomColor: `${value}`
+        },
+        [`.${e(`border-l-${modifier}`)}`]: {
+          borderLeftColor: `${value}`
+        },
+      }))
+
+      addUtilities(utilities, variants('borderColor'))
+    },
+  ],
   corePlugins: {
     container: false
   },

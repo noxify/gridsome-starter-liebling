@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="w-full mb-2 overflow-y-auto">
-      <h2 class="font-thin text-xl">Navigation</h2>
+      <h2 class="text-xl my-0">Navigation</h2>
       <div class="menu-links">
         <ul>
           <li
             v-for="navItem in $static.metadata.headerNavigation"
             :key="navItem.name"
-            class="px-4 py-1"
+            class="py-1"
           >
             <g-link
               class="block py-1"
@@ -63,7 +63,7 @@
         </ul>
       </div>
     </div>
-    <div class="mobileSubnav">
+    <div class="mobileSubnav pl-2">
       <subnavigation />
     </div>
   </div>

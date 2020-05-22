@@ -1,67 +1,28 @@
 <template>
   <Layout>
+    <content-header :image="$page.blog.image" :staticImage="false" :darken="0"></content-header>
 
-    <div class="header relative"  id="header">
-      <g-image
-        :src="$page.blog.image"
-        width="2000"
-        class="object-cover w-full absolute -z-10 h-full w-full"
-      ></g-image>
-    </div>
-
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-gray-800">
       <div class="lg:mx-32 md:mx-16 sm:mx-8 mx-4 pt-8">
-        <section class="post-header container mx-auto px-0 mb-4 border-b">
-          <span class="text-blue-500 font-medium uppercase tracking-wide text-sm">
+        <section class="post-header container mx-auto px-0 mb-16 text-center">
+          <h1
+            class="text-gray-800 font-extrabold tracking-wider text-5xl mb-6"
+          >{{ $page.blog.title}}</h1>
+          <span class="tracking-wide text-sm">
             <g-link
+              class="font-medium"
               :to="$page.blog.category.path"
-              class="hover:underline"
-            >{{ $page.blog.category.title }}</g-link>
+            >{{ $page.blog.category.title }}</g-link>&nbsp;&middot;&nbsp;
+            <time :datetime="$page.blog.datetime">{{ $page.blog.humanTime }}</time>
+            &nbsp;&middot;&nbsp;
+            {{ $page.blog.timeToRead }} min read
           </span>
-          <h1 class="text-5xl font-medium leading-none mt-0">{{ $page.blog.title}}</h1>
-          <div class="text-2xl pt-4 pb-10 text-gray-700 font-serif" v-html="$page.blog.excerpt"></div>
-        </section>
-        <section class="post-author-list mb-10 mx-0">
-          <div class="flex items-center">
-            <div class="flex justify-between items-center">
-              <ul class="list-none flex author-list">
-                <li v-for="author in $page.blog.author" :key="author.id" class="author-list-item">
-                  <g-link :to="author.path" v-tooltip="author.name">
-                    <g-image
-                      :src="author.image"
-                      :alt="author.name"
-                      class="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-gray-200 border-2 border-white"
-                    />
-                  </g-link>
-                </li>
-              </ul>
-            </div>
-            <div class="pl-3 flex flex-col text-xs leading-none uppercase">
-              <p>
-                <span v-for="(author, index) in $page.blog.author" :key="author.id">
-                  <g-link
-                    :to="author.path"
-                    v-tooltip="author.name"
-                    class="hover:underline"
-                  >{{ author.name }}</g-link>
-                  <span v-if="index < $page.blog.author.length-1">,</span>
-                </span>
-              </p>
-              <p class="text-gray-700">
-                <time :datetime="$page.blog.datetime">{{ $page.blog.humanTime }}</time>
-                &nbsp;&middot;&nbsp; {{ $page.blog.timeToRead }} min read
-              </p>
-            </div>
-          </div>
         </section>
       </div>
-      <section class="post-image mx-auto w-full">
-        <g-image :src="$page.blog.image"></g-image>
-      </section>
 
       <div class="lg:mx-32 md:mx-16 px-4 sm:px-0">
-        <section class="post-content container mx-auto relative font-serif text-gray-700">
-          <div class="post-content-text text-xl" v-html="$page.blog.content"></div>
+        <section class="post-content container mx-auto relative">
+          <div v-html="$page.blog.content"></div>
         </section>
 
         <section class="post-tags container mx-auto relative py-10">
@@ -75,11 +36,81 @@
       </div>
     </div>
 
-    <section class="post-related bg-black text-gray-200 pt-10 border-b border-b-gray-900">
+    <div class="border-t border-b bg-gray-100">
       <div class="container mx-auto">
-        <div class="flex flex-wrap pt-8 pb-8 mx-4 sm:-mx-4">
-          <CardItem v-if="$page.previous" :record="$page.previous" :border=false></CardItem>
-          <CardItem v-if="$page.next" :record="$page.next" :border=false></CardItem>
+        <div class="lg:mx-32 md:mx-16 px-4 sm:px-0">
+          <section class="container mx-auto py-10">
+            <div class="flex flex-wrap justify-center">
+              <div class="w-full flex justify-center md:w-10/12 mb-4 text-center">
+                <div class="mb-2 sm:mb-0 w-full">
+                  <div class="md:flex p-6 pl-0 self-center">
+                    <g-image
+                      :src="$page.blog.author[0].image"
+                      class="h-16 w-16 md:h-24 md:w-24 mx-auto md:mx-0 md:mr-6 rounded-full bg-gray-200"
+                    ></g-image>
+
+                    <div class="text-center md:text-left">
+                      <g-link :to="$page.blog.author[0].path" class="text-black">
+                        <h2 class="text-lg my-1 mt-2 md:mt-0">{{ $page.blog.author[0].name }}</h2>
+                      </g-link>
+                      <div v-if="authors.length>0" class="post-authors font-light text-sm pt-2">
+                        Among with
+                        <g-link
+                          class="font-normal"
+                          :to="author.path"
+                          v-for="author in authors"
+                          :key="author.name"
+                        >{{author.name}}</g-link>
+                      </div>
+                      <div
+                        class="font-light tracking-wider leading-relaxed py-4"
+                      >{{ $page.blog.author[0].bio }}</div>
+                      <div class>
+                        <a
+                          :href="$page.blog.author[0].facebook"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="hover:text-blue-500"
+                        >
+                          <font-awesome :icon="['fab', 'facebook']" />
+                        </a>
+                        &nbsp;
+                        <a
+                          :href="$page.blog.author[0].twitter"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="hover:text-blue-500"
+                        >
+                          <font-awesome :icon="['fab', 'twitter']" />
+                        </a>
+                        &nbsp;
+                        <a
+                          :href="$page.blog.author[0].linkedin"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="hover:text-blue-500"
+                        >
+                          <font-awesome :icon="['fab', 'linkedin']" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="post-related pt-10 border-b border-b-gray-900" v-if="relatedRecords.length>0">
+      <div class="container mx-auto">
+        <div class="flex justify-center pt-8 pb-8 mx-4 sm:-mx-4">
+          <CardItem
+            :record="relatedRecord.node"
+            v-for="relatedRecord in relatedRecords"
+            :key="relatedRecord.node.id"
+          ></CardItem>
         </div>
       </div>
     </section>
@@ -87,8 +118,8 @@
 </template>
 
 <page-query>
-  query($id: ID!, $previousElement: ID!, $nextElement: ID!) {
-    blog(id: $id) {
+  query($recordId: ID!, $tags: [String]) {
+    blog(id: $recordId) {
       title
       path
       image(width:1600, height:800)
@@ -97,6 +128,52 @@
       content
       humanTime : created(format:"DD MMMM YYYY")
       datetime : created(format:"ddd MMM DD YYYY hh:mm:ss zZ")
+      
+      timeToRead
+      tags {
+        id
+        title
+        path
+      }
+      category {
+        id
+        title
+        path
+        belongsTo(limit:4) {
+          totalCount
+          edges {
+            node {
+              ... on Blog {
+                title
+                path
+              }
+            }
+          }
+        }
+      }
+      author {
+        id
+        name
+        image
+        path
+        bio
+      }
+    }
+
+    related: allBlog(
+      filter: { id: { ne: $recordId }, tags: {containsAny: $tags} }
+    ) {
+      edges {
+        node {
+          title
+      path
+      image(width:1600, height:800)
+      image_caption
+      excerpt
+      content
+      humanTime : created(format:"DD MMMM YYYY")
+      datetime : created(format:"ddd MMM DD YYYY hh:mm:ss zZ")
+      
       timeToRead
       tags {
         id
@@ -125,46 +202,7 @@
         image
         path
       }
-      tags {
-        id
-        title
-        path
-      }
-    }
-
-    previous: blog(id: $previousElement) {
-      title
-      excerpt
-      image(width:800)
-      path
-      timeToRead
-      category {
-        id
-        title
-      }
-      author {
-        id
-        name
-        image(width:64, height:64, fit:inside)
-        path
-      }
-    }
-
-    next: blog(id: $nextElement) {
-      title
-      excerpt
-      image(width:800)
-      path
-      timeToRead
-      category {
-        id
-        title
-      }
-      author {
-        id
-        name
-        image(width:64, height:64, fit:inside)
-        path
+        }
       }
     }
 
@@ -175,16 +213,38 @@
 
 <script>
 import CardItem from "~/components/Content/CardItem.vue";
+import ContentHeader from "~/components/Partials/ContentHeader.vue";
+import mediumZoom from "medium-zoom";
+import { sampleSize } from "lodash";
 
 export default {
   components: {
-    CardItem
+    CardItem,
+    ContentHeader
   },
   metaInfo() {
     return {
       title: this.$page.blog.title
     };
+  },
+  computed: {
+    relatedRecords() {
+      return sampleSize(this.$page.related.edges, 2);
+    },
+    authors() {
+      let authors = [];
+      for (let index = 1; index < this.$page.blog.author.length; index++) {
+        authors.push({
+          name: this.$page.blog.author[index].name,
+          path: this.$page.blog.author[index].path
+        });
+      }
+
+      return authors;
+    }
+  },
+  mounted() {
+    mediumZoom(".post-content img");
   }
-  
 };
 </script>

@@ -11,12 +11,12 @@ author: author1
 
 ## Concretam matris protinus populos
 
-Lorem markdownum Hesperus in publica iusta aeternus num removit ille. Ea cur
+Lorem markdownum Hesperus in `publica` iusta aeternus num removit ille. Ea cur
 utar cum *tenuit Philemon*, etiamnum nomen; tibi horrida potuit. Sopita sine
 **ego repetita**, lunae seraque ignoscas nullus cornua illi in. *Praemia caelum
 fictilibus* Iasone valens tura breve!
 
-```
+```js
 if (dvr_web) {
     packet.soundRpc.targetNas(promText.peripheral.tebibyte_firewire_inbox(
             constant_bing));
@@ -32,7 +32,7 @@ Nec vulnus tibi pelagi deique, vir capit fama genitoris decorata tantum. Non est
 faciunt, fide nec induxerat fugit, consueta, Laiades, parvo. Imperium virgine
 arcus testantur tecta praecorrumpere referam.
 
-```
+```js
 if (fileIsdnPim) {
     phreaking.dcimPcmciaModel = permalink;
     parameter_checksum_processor(dos_warm_heat, 3 + hard,
@@ -60,7 +60,7 @@ Sua erat horrenda decus. Onerosior nec, meo primoque lusuque sparsi flectere
 retardat. Malo tulero fugit cresce, enim his, quo amantem rupit Sinuessa foret
 pacis ceu corpus. Maximus non furorem prima lumina hoc et, duxerat, ne tecta.
 
-```
+```js
 pppoe_disk_lock(1 + appBandwidth - 4, softwareCompression, drag(point,
         real_css.slashdot_mnemonic(nas), directxDesktop));
 if (pointRepositoryToken(2 - finder - www_drive_memory)) {

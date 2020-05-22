@@ -56,7 +56,18 @@ module.exports = {
   ],
   transformers: {
     remark: {
-      plugins: []
+      plugins: [
+        'remark-autolink-headings',
+        'remark-attr',
+        ['gridsome-plugin-remark-prismjs-all', {
+          noInlineHighlight: false,
+          showLineNumbers: false,
+        }],
+        require('./packages/gridsome-plugin-remark-figure')
+      ],
+      
+      processImages: false
+      
     }
   },
   templates: {

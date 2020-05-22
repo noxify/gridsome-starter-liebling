@@ -1,9 +1,4 @@
-// Server API makes it possible to hook into various parts of Gridsome
-// on server-side and add custom data to the GraphQL data layer.
-// Learn more: https://gridsome.org/docs/server-api/
-
-// Changes here require a server restart.
-// To restart press CTRL + C in terminal and run `gridsome develop`
+const _ = require('lodash');
 
 module.exports = function (api) {
   api.loadSource(({
@@ -39,33 +34,38 @@ module.exports = function (api) {
     } = await graphql(`{
       allBlog {
         edges {
-          previous {
-            id
-          }
-          next {
-            id
-          }
           node {
             id
             path
+            tags {
+              title
+            }
           }
         }
       }
-    }
-    `);
+    }`);
 
-    data.allBlog.edges.forEach(function (element) {
+    data.allBlog.edges.forEach(({
+      node
+    }) => {
+
+      //without the map, you will get an 500 error
+      //because the graphql filter requires an array
+      //not an object
+      var tags = _.map(node.tags, function (tag) {
+        return tag.title;
+      });
+
       createPage({
-        path: element.node.path,
+        path: node.path,
         component: './src/templates/BlogPost.vue',
         context: {
-          previousElement: (element.previous) ? element.previous.id : '##empty##',
-          nextElement: (element.next) ? element.next.id : '##empty##',
-          id: element.node.id
+          recordId: node.id,
+          tags: tags,
         }
       });
 
     });
-
   });
+
 }

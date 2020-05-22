@@ -10,7 +10,9 @@ import {
   VClosePopover
 } from 'v-tooltip'
 
+import 'prismjs/themes/prism.css'
 import '~/assets/scss/main.scss'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 import {
   FontAwesomeIcon

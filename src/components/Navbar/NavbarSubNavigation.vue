@@ -1,8 +1,8 @@
 <template>
   <div class="container mx-auto">
-    <div class="flex flex-wrap my-4 mx-4">
+    <div class="flex flex-wrap md:my-4 md:mx-4">
       <div class="w-full mb-2">
-        <h2 class="font-thin text-xl mb-1">Recent articles</h2>
+        <h2 class="text-xl mt-0 mb-2">Recent articles</h2>
 
         <div class="w-full">
           <VueSlickCarousel :arrows="true" :dots="false" class="-mx-4" v-bind="sliderSettings">
@@ -35,10 +35,10 @@
         </div>
       </div>
       <div class="w-full mb-8">
-        <h2 class="font-thin text-xl">Tags</h2>
+        <h2 class="text-xl mt-2 mb-2">Tags</h2>
 
         <ul class="flex flex-wrap">
-          <li class="mr-4 my-2 px-2 py-1 hover:text-blue-500 text-center bg-gray-200 rounded-lg" v-for="tag in $static.tags.edges" :key="tag.node.id">
+          <li class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-4 mb-4 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full" v-for="tag in $static.tags.edges" :key="tag.node.id">
             <g-link :to="tag.node.path">{{ tag.node.title }}</g-link>
           </li>
         </ul>

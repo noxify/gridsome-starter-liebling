@@ -24,7 +24,8 @@
 
       <slot>
         <div
-          class="text-center text-white bg-gray-800 bg-opacity-50 lg:py-48 md:py-32 sm:py-24 py-16"
+          class="text-center text-white bg-gray-800 lg:py-48 md:py-32 sm:py-24 py-16"
+          :class='`bg-opacity-${darken}`'
         >
           <h2 v-if="title!=null" class="sm:text-5xl text-3xl font-extrabold">{{ title }}</h2>
           <p v-if="sub!=null" class="sm:text-xl font-sans">{{ sub }}</p>
@@ -52,6 +53,10 @@ export default {
     staticImage: {
       type: Boolean,
       default: true
+    },
+    darken: {
+      type: Number,
+      default: 50
     }
   },
   computed: {
