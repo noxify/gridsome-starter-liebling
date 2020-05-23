@@ -1,3 +1,5 @@
+@import "~rfs/scss";
+
 @tailwind base;
 
 blockquote {
@@ -12,6 +14,50 @@ blockquote {
     padding: 0 !important;
   }
 }
+
+h1, .h1 {
+  @apply font-sans;
+  @apply my-4;
+  @apply font-medium;
+  @include font-size(3rem);
+
+}
+
+h2, .h2 {
+  @apply font-sans;
+  @apply my-4;
+  @apply font-medium;
+  @include font-size(2.25rem);
+}
+
+h3, .h3 {
+  @apply font-sans;
+  @apply my-4;
+  @apply font-medium;
+  @include font-size(1.875rem);
+}
+
+h4, .h4 {
+  @apply font-sans;
+  @apply my-4;
+  @apply font-medium;
+  @include font-size(1.5rem);
+}
+
+h5, .h5 {
+  @apply font-sans;
+  @apply my-4;
+  @apply font-medium;
+  @include font-size(1.25rem);
+}
+
+h6, .h6 {
+  @apply font-sans;
+  @apply my-4;
+  @apply font-medium;
+  @include font-size(1.125rem);
+}
+
 
 @tailwind components;
 @tailwind utilities;
@@ -320,15 +366,17 @@ blockquote {
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .post-content {
+
   p,
   span:not(.token),
   li {
     @apply tracking-wider;
     @apply leading-relaxed;
-    @apply text-lg;
     @apply font-normal;
     @apply text-gray-800;
+    @include font-size(1.1rem);
   }
+
   ol {
     @apply list-decimal;
     @apply ml-5;
@@ -339,6 +387,10 @@ blockquote {
     @apply list-disc;
     @apply ml-5;
     @apply mt-5;
+  }
+
+  li > ul {
+    @apply mt-0;
   }
 
 }
@@ -366,9 +418,10 @@ blockquote {
 pre[class*="language-"],
 code[class*="language-"] {
   color: #5c6e74;
-  
+
   text-shadow: none;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  @include font-size(0.9rem);
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -408,7 +461,7 @@ pre[class*="language-"] {
 }
 
 :not(pre)>code[class*="language-"] {
-  padding: .1em .3em;
+  padding: .3em .3em;
   border-radius: .3em;
   color: #db4c69;
   @apply bg-gray-200;
@@ -527,7 +580,7 @@ pre[class*="language-"]>code[class*="language-"] {
 figure {
   @apply my-8;
   @apply -mx-16;
-  width:calc(100% + 8rem);
+  width: calc(100% + 8rem);
 
   figcaption {
     @apply text-center;

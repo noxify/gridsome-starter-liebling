@@ -60,56 +60,7 @@ module.exports = {
   },
   variants: {},
   plugins: [
-    function ({
-      addBase,
-      config
-    }) {
-
-      addBase({
-        'h1': {
-          fontSize: config('theme.fontSize.5xl'),
-          fontWeight: config('theme.fontWeight.bold'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4')
-        },
-        'h2': {
-          fontSize: config('theme.fontSize.4xl'),
-          fontWeight: config('theme.fontWeight.medium'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4')
-        },
-        'h3': {
-          fontSize: config('theme.fontSize.3xl'),
-          fontWeight: config('theme.fontWeight.medium'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4')
-        },
-        'h4': {
-          fontSize: config('theme.fontSize.2xl'),
-          fontWeight: config('theme.fontWeight.medium'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4')
-        },
-        'h5': {
-          fontSize: config('theme.fontSize.xl'),
-          fontWeight: config('theme.fontWeight.medium'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4')
-        },
-        'h6': {
-          fontSize: config('theme.fontSize.lg'),
-          fontWeight: config('theme.fontWeight.medium'),
-          fontFamily: config('theme.fontFamily.sans').join(', '),
-          marginTop: config('theme.margin.4'),
-          marginBottom: config('theme.margin.4')
-        },
-      })
-    },
+    
     function ({
       addUtilities,
       e,

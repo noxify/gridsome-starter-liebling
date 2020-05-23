@@ -6,7 +6,7 @@
       <div class="lg:mx-32 md:mx-16 sm:mx-8 mx-4 pt-8">
         <section class="post-header container mx-auto px-0 mb-16 text-center">
           <h1
-            class="text-gray-800 font-extrabold tracking-wider text-5xl mb-6"
+            class="text-gray-800 font-extrabold tracking-wider mb-6"
           >{{ $page.blog.title}}</h1>
           <span class="tracking-wide text-sm">
             <g-link
@@ -20,7 +20,7 @@
         </section>
       </div>
 
-      <div class="lg:mx-32 md:mx-16 px-4 sm:px-0">
+      <div class="lg:mx-32 md:mx-16 px-4">
         <section class="post-content container mx-auto relative">
           <div v-html="$page.blog.content"></div>
         </section>
@@ -105,7 +105,12 @@
 
     <section class="post-related pt-10 border-b border-b-gray-900" v-if="relatedRecords.length>0">
       <div class="container mx-auto">
-        <div class="flex justify-center pt-8 pb-8 mx-4 sm:-mx-4">
+        
+        <div class="text-center">
+          <h4 class="font-light my-0">Recommended for you</h4>
+        </div>
+        <div class="flex flex-wrap justify-center pt-8 pb-8">
+          
           <CardItem
             :record="relatedRecord.node"
             v-for="relatedRecord in relatedRecords"

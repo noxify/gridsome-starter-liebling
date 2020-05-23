@@ -20,6 +20,7 @@
     "pluralize": "^8.0.0",
     "prism-themes": "^1.4.0",
     "remark-attr": "^0.11.1",
+    "rfs": "^9.0.3",
     "sass-loader": "^8.0.2",
     "tailwindcss": "^1.4.6",
     "v-click-outside": "^3.0.1",
