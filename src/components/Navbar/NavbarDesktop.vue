@@ -144,6 +144,9 @@ export default {
       if( this.hideSubnav ) {
         this.hideSubNavigation()
       }
+    },
+    $route (to, from){
+      this.hideSubNavigation();
     }
   },
   

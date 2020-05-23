@@ -70,7 +70,14 @@ export default {
     closeNavbarModal() {
       this.showNavbarModal = false;
     }
-  }
+    
+  },
+  watch:{
+    $route (to, from){
+      this.closeNavbarModal();
+      this.closeSearchModal();
+    }
+  } 
 };
 </script>
 
