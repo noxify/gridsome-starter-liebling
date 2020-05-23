@@ -52,7 +52,14 @@ module.exports = {
           }
         }
       }
-    }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'CustomPage',
+        path: './content/pages/*.md'
+      }
+    },
   ],
   transformers: {
     remark: {
@@ -72,7 +79,11 @@ module.exports = {
   },
   templates: {
     Blog: [{
-      path: '/:title'
+      path: '/posts/:title'
+    }],
+    CustomPage: [{
+      path: '/:title',
+      component: '~/templates/CustomPage.vue'
     }],
     Category: [{
       path: '/category/:title',
@@ -85,7 +96,7 @@ module.exports = {
     Tag: [{
       path: '/tags/:title',
       component: '~/templates/Tag.vue'
-    }],
+    }]
   },
   chainWebpack: config => {
       config.resolve.alias.set('@pageImage', '@/assets/images');

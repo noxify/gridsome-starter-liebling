@@ -22,6 +22,9 @@ module.exports = function (api) {
         ...options
       };
     }
+    if( options.internal.typeName === 'CustomPage') {
+      options.subtitle = options.subtitle || ''
+    }
   })
 
   api.createPages(async ({

@@ -2,7 +2,6 @@ const visit = require('unist-util-visit')
 
 module.exports = function attacher(options = {}) {
 
-    console.log("figure ")
     const transformer = this.data('transformer')
 
     return async function transform(tree, file, callback) {

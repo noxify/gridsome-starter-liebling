@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="text-center bg-gray-200 py-20" v-if="!hasImage">
-      <h2 v-if="title!=null" class="text-5xl font-extrabold">{{ title }}</h2>
+    <div class="text-center bg-gray-200 py-10 md:py-20" v-if="!hasImage">
+      <h2 v-if="title!=null" class="h1 font-extrabold">{{ title }}</h2>
       <p v-if="sub!=null" class="text-gray-600 text-light font-sans">{{ sub }}</p>
     </div>
 
@@ -24,11 +24,11 @@
 
       <slot>
         <div
-          class="text-center text-white bg-gray-800 lg:py-48 md:py-32 sm:py-24 py-16"
+          class="text-center text-white bg-gray-800 lg:py-48 md:py-32 py-24"
           :class='`bg-opacity-${darken}`'
         >
-          <h2 v-if="title!=null" class="sm:text-5xl text-3xl font-extrabold">{{ title }}</h2>
-          <p v-if="sub!=null" class="sm:text-xl font-sans">{{ sub }}</p>
+          <h2 v-if="title!=null" class="h1 font-extrabold">{{ title }}</h2>
+          <p v-if="sub!=null" class="h5 font-sans">{{ sub }}</p>
         </div>
       </slot>
     </div>
