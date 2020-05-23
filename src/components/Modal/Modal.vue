@@ -2,7 +2,7 @@
   <Transition name="fade">
     <div
       v-if="showModal"
-      class="fixed inset-0 w-full h-full overflow-y-auto flex items-center justify-center bg-white z-1000"
+      class="fixed inset-0 w-full h-full overflow-y-auto overflow-x-hidden flex items-center justify-center bg-white z-1000"
       @click.self="close"
     >
       <div class="relative w-full h-full bg-white p-8">

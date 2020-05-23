@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-full mb-2 overflow-y-auto">
+    <div class="w-full mb-2 overflow-x-hidden">
       <h2 class="text-xl my-0">Navigation</h2>
       <div class="menu-links">
         <ul>
