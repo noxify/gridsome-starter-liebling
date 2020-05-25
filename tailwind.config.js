@@ -5,6 +5,7 @@ var flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').de
 
 
 module.exports = {
+  purge: ["./src/**/*.html", "./src/**/*.vue", "./src/**/*.jsx"],
   theme: {
     extend: {
       height: {
