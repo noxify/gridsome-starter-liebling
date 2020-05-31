@@ -123,7 +123,7 @@
 </template>
 
 <page-query>
-  query($recordId: ID!, $tags: [String]) {
+  query($recordId: ID!, $tags: [ID]) {
     blog(id: $recordId) {
       title
       path

@@ -7,7 +7,8 @@
 module.exports = {
   siteName: 'Gridsome',
   siteDescription: "An open-source framework to generate awesome pages",
-  plugins: [{
+  plugins: [
+    {
       use: 'gridsome-plugin-tailwindcss',
       options: {
         tailwindConfig: './tailwind.config.js',
@@ -60,6 +61,17 @@ module.exports = {
         path: './content/pages/*.md'
       }
     },
+    {
+      use: 'gridsome-plugin-flexsearch',
+      options: {
+        searchFields: ['title', 'content'],
+        collections: [{
+          typeName: 'Blog',
+          indexName: 'Blog',
+          fields: ['title', 'category', 'excerpt', 'content']
+        }]
+      }
+    }
   ],
   transformers: {
     remark: {
