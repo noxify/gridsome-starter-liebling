@@ -5,7 +5,18 @@ var flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').de
 
 
 module.exports = {
-  purge: ["./src/**/*.html", "./src/**/*.vue", "./src/**/*.jsx"],
+  purge: {
+    content:["./src/**/*.html", "./src/**/*.vue", "./src/**/*.jsx"],
+    options: {
+      whitelist: [
+        'bg-opacity-0',
+        'bg-opacity-25',
+        'bg-opacity-50',
+        'bg-opacity-75',
+        'bg-opacity-100'
+      ]
+    }
+  },
   theme: {
     extend: {
       height: {
