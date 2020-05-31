@@ -25,7 +25,7 @@
       <slot>
         <div
           class="text-center text-white bg-gray-800 lg:py-48 md:py-32 py-24"
-          :class='`bg-opacity-${darken}`'
+          :class='`bg-opacity-${opacity}`'
         >
           <h2 v-if="title!=null" class="h1 font-extrabold">{{ title }}</h2>
           <p v-if="sub!=null" class="h5 font-sans">{{ sub }}</p>
@@ -54,7 +54,7 @@ export default {
       type: Boolean,
       default: true
     },
-    darken: {
+    opacity: {
       type: Number,
       default: 50
     }
