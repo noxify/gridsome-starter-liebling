@@ -3,7 +3,7 @@
 Grisome starter based on [Ghost Liebling](https://github.com/eddiesigner/liebling) and tailwindcss.
 
 ## Demo
-Soon
+https://gridsome-starter-liebling.now.sh
 
 ## Features
 
