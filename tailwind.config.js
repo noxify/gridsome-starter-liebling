@@ -13,7 +13,8 @@ module.exports = {
         'bg-opacity-25',
         'bg-opacity-50',
         'bg-opacity-75',
-        'bg-opacity-100'
+        'bg-opacity-100',
+        'mode-dark'
       ]
     }
   },
@@ -83,9 +84,13 @@ module.exports = {
       'none': 'none',
     }
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'dark', 'dark-hover', 'dark-focus'],
+    textColor: ['responsive', 'hover', 'focus', 'dark', 'dark-hover', 'dark-focus'],
+    borderColor: ['responsive', 'hover', 'focus', 'dark', 'dark-hover', 'dark-focus']
+  },
   plugins: [
-    
+      require('tailwindcss-dark-mode')(),
     function ({
       addUtilities,
       e,

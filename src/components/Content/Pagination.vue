@@ -2,17 +2,17 @@
   <ul class="flex pl-0 list-none rounded my-2">
 
     <li v-if="!isFirstPage(currentPage, totalPages)">
-      <g-link :to="previousPage(currentPage,totalPages)" class="w-10 relative block py-2 text-center leading-tight bg-white border border-gray-300 text-black ml-1 rounded-full hover:bg-gray-300 focus:outline-none" tabindex="-1" >
+      <g-link :to="previousPage(currentPage,totalPages)" class="w-10 relative block py-2 text-center dark:text-gray-400 dark:border-gray-800 dark-hover:bg-gray-700 dark:bg-gray-800 leading-tight bg-white border border-gray-300 text-black ml-1 rounded-full hover:bg-gray-300 focus:outline-none" tabindex="-1" >
         <font-awesome :icon="['fas', 'arrow-left']"></font-awesome>
       </g-link>
     </li>
 
-    <li class="self-center mx-4">
+    <li class="self-center mx-4 dark:text-gray-400 ">
         Page {{ currentPage }} of {{ totalPages }} 
     </li>
 
     <li v-if="!isLastPage(currentPage, totalPages)">
-      <g-link :to="nextPage(currentPage,totalPages)" class="w-10 relative block py-2 text-center leading-tight bg-white border border-gray-300 text-black ml-1 rounded-full hover:bg-gray-300 focus:outline-none" tabindex="-1" >
+      <g-link :to="nextPage(currentPage,totalPages)" class="w-10 relative block py-2 text-center dark:text-gray-400 dark:border-gray-800 dark-hover:bg-gray-700 dark:bg-gray-800 leading-tight bg-white border border-gray-300 text-black ml-1 rounded-full hover:bg-gray-300 focus:outline-none" tabindex="-1" >
         <font-awesome :icon="['fas', 'arrow-right']"></font-awesome>
       </g-link>
     </li>

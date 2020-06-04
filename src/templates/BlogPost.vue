@@ -2,11 +2,11 @@
   <Layout>
     <content-header :image="$page.blog.image" :staticImage="false" :opacity="0"></content-header>
 
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-gray-800">
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-gray-800 dark:text-gray-500">
       <div class="lg:mx-32 md:mx-16 sm:mx-8 mx-4 pt-8">
         <section class="post-header container mx-auto px-0 mb-16 text-center">
           <h1
-            class="text-gray-800 font-extrabold tracking-wider mb-6"
+            class="text-gray-800 dark:text-gray-400 font-extrabold tracking-wider mb-6"
           >{{ $page.blog.title}}</h1>
           <span class="tracking-wide text-sm">
             <g-link
@@ -30,13 +30,13 @@
             v-for="tag in $page.blog.tags"
             :key="tag.id"
             :to="tag.path"
-            class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-2 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full"
+            class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-2 border hover:border-blue-500 border-gray-600 text-gray-700 dark:text-gray-400 rounded-full"
           >{{ tag.title }}</g-link>
         </section>
       </div>
     </div>
 
-    <div class="border-t border-b bg-gray-100">
+    <div class="border-t border-b bg-gray-100 dark:border-black dark:bg-gray-900 dark:text-gray-500">
       <div class="container mx-auto">
         <div class="lg:mx-32 md:mx-16 px-4 sm:px-0">
           <section class="container mx-auto py-10">
@@ -50,7 +50,7 @@
                     ></g-image>
 
                     <div class="text-center md:text-left">
-                      <g-link :to="$page.blog.author[0].path" class="text-black">
+                      <g-link :to="$page.blog.author[0].path" class="text-black dark:text-white">
                         <h2 class="text-lg my-1 mt-2 md:mt-0">{{ $page.blog.author[0].name }}</h2>
                       </g-link>
                       <div v-if="authors.length>0" class="post-authors font-light text-sm pt-2">

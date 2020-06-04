@@ -1,18 +1,18 @@
 <template>
-  <div class="h-16">
-    <headroom :downTolerance="10" :upTolerance="20" :offset="15" @unpin="navbarUnpinned=true" @pin="navbarUnpinned=false">
+  <div class="h-16 dark:bg-black bg-white">
+    <headroom :classes="{'initial' : 'headroom bg-white dark:bg-black border-b dark:border-gray-900'}" :downTolerance="10" :upTolerance="20" :offset="15" @unpin="navbarUnpinned=true" @pin="navbarUnpinned=false">
       <navbar-desktop
-        @setTheme="setTheme"
+        v-on="$listeners" 
         @openSearchModal="openSearchModal"
-        :theme="this.theme"
+        :theme="theme"
         :hideSubnav="this.navbarUnpinned"
       />
 
       <navbar-mobile
-        @setTheme="setTheme"
         @openSearchModal="openSearchModal"
         @openNavbarModal="openNavbarModal"
-        :theme="this.theme"
+        v-on="$listeners"
+        :theme="theme"
       />
 
 
@@ -37,9 +37,13 @@ import NavbarModal from "~/components/Modal/NavbarMobileModal.vue";
 import { headroom } from "vue-headroom";
 
 export default {
+  props: {
+    theme : {
+      type: String
+    }
+  },
   data: function() {
     return {
-      theme: "light",
       showSearchModal: false,
       showNavbarModal: false,
       headerHeight: 100,
@@ -55,9 +59,6 @@ export default {
     headroom
   },
   methods: {
-    setTheme(mode) {
-      this.theme = mode;
-    },
     openSearchModal() {
       this.showSearchModal = true;
     },

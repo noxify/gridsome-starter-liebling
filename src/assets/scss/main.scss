@@ -152,10 +152,7 @@ h6, .h6 {
   }
 
   @apply relative;
-  @apply bg-white;
   @apply border;
-  @apply border-gray-200;
-
 
   .post-card-author {
     @apply absolute;
@@ -183,7 +180,6 @@ h6, .h6 {
   }
 
   .post-card-content {
-    @apply bg-white;
     @apply relative;
     @apply flex-1;
   }
@@ -213,7 +209,6 @@ h6, .h6 {
 .headroom {
   z-index: 500 !important;
   @apply shadow-md;
-  @apply bg-white;
 }
 
 /* ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -365,6 +360,20 @@ h6, .h6 {
     Content
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.mode-dark {
+  .post-content {
+    p,
+    span:not(.token),
+    li {
+      @apply tracking-wider;
+      @apply leading-relaxed;
+      @apply font-normal;
+      @apply text-gray-500;
+      @include font-size(1.1rem);
+    }
+  }
+}
+
 .post-content {
 
   p,
@@ -445,14 +454,6 @@ code[class*="language-"]::mozselection {
   @apply bg-gray-200;
 }
 
-@media print {
-
-  pre[class*="language-"],
-  code[class*="language-"] {
-    text-shadow: none;
-  }
-}
-
 pre[class*="language-"] {
   padding: 1em;
   margin: .5em 0;
@@ -466,6 +467,44 @@ pre[class*="language-"] {
   color: #db4c69;
   @apply bg-gray-200;
 }
+
+.mode-dark {
+  pre[class*="language-"]::selection,
+  code[class*="language-"]::selection,
+  pre[class*="language-"]::mozselection,
+  code[class*="language-"]::mozselection {
+    text-shadow: none;
+    @apply bg-gray-800;
+  }
+
+  pre[class*="language-"],
+  code[class*="language-"] {
+    @apply text-gray-400;
+  }
+
+  pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    @apply bg-gray-800;
+  }
+
+  :not(pre)>code[class*="language-"] {
+    padding: .3em .3em;
+    border-radius: .3em;
+    color: #db4c69;
+    @apply bg-gray-800;
+  }
+}
+
+@media print {
+
+  pre[class*="language-"],
+  code[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
 
 /*********************************************************
 * Tokens
@@ -568,6 +607,11 @@ pre[class*="language-"]>code[class*="language-"] {
   white-space: pre;
 }
 
+.mode-dark {
+  .medium-zoom-overlay {
+    background-color: #000 !important;
+  }
+}
 
 .medium-zoom-overlay {
   @apply z-1000;

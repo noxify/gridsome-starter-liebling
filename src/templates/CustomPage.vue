@@ -2,10 +2,10 @@
   <Layout>
     <content-header :title="$page.page.title" :sub="$page.page.subtitle"></content-header>
 
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-gray-800">
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden text-gray-800 dark:text-gray-400">
 
       <div class="lg:mx-32 md:mx-16 px-4 mb-8">
-        <section class="post-content container mx-auto relative">
+        <section class="post-content container mx-auto relative dark:text-gray-400">
           <div v-html="$page.page.content"></div>
         </section>
       </div>

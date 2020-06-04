@@ -1,6 +1,6 @@
 <template>
   <div class="w-full md:w-1/2 lg:w-1/3 px-4 my-4">
-    <div class="post-card rounded-lg hover:shadow-xl z-100" :id="record.id">
+    <div class="post-card border-gray-200 dark:border-gray-900 bg-white dark:bg-black rounded-lg hover:shadow-xl z-100 dark:bg-gray-900" :id="record.id">
       <div
         class="post-card-author pt-4 pl-4"
         v-tooltip="{classes:'card-author-tooltip', content:this.authors, placement:'right'}"
@@ -30,15 +30,15 @@
         </div>
         <g-image :src="record.image" :alt="record.title" class="post-card-image"></g-image>
       </g-link>
-      <div class="post-card-content h-full rounded-b-lg">
+      <div class="post-card-content bg-white dark:bg-gray-900 h-full rounded-b-lg">
         <div class="flex-col relative flex justify-between px-6 pt-4">
-          <p class="text-xs tracking-wide font-medium mt-3">
+          <p class="text-xs tracking-wide font-medium mt-3 dark:text-white">
             <g-link :to="record.category.path">{{ record.category.title }}</g-link>
           </p>
         </div>
         <g-link
           :to="record.path"
-          class="flex-col relative flex justify-between rounded-b-lg px-6 h-40 mt-2"
+          class="flex-col relative flex justify-between rounded-b-lg px-6 h-40 mt-2 dark:text-white"
         >
           <h3 class="post-card-title tracking-wide mt-0">{{ record.title }}</h3>
 

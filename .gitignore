@@ -6,3 +6,5 @@ node_modules
 dist
 .env
 .env.*
+
+Users/marcusreinhardt/Development/gridsome-slow-performance/packages

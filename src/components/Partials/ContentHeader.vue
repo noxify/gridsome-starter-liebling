@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <div class="text-center bg-gray-200 py-10 md:py-20" v-if="!hasImage">
-      <h2 v-if="title!=null" class="h1 font-extrabold">{{ title }}</h2>
+  <div >
+    <div class="z-100 text-center bg-gray-200 dark:bg-gray-900 py-10 md:py-20" v-if="!hasImage">
+      <h2 v-if="title!=null" class="h1 font-extrabold dark:text-gray-400">{{ title }}</h2>
       <p v-if="sub!=null" class="text-gray-600 text-light font-sans">{{ sub }}</p>
     </div>
 
-    <div v-if="hasImage" class="relative mt-0 h-auto">
+    <div v-if="hasImage" class="z-100 relative mt-0 h-auto">
       <g-image
         v-if="hasImage && staticImage"
         :src="require(`!!assets-loader!@pageImage/${image}`)"

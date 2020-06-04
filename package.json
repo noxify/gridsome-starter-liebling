@@ -10,7 +10,7 @@
   "dependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.0",
-    "gridsome": "^0.7.15",
+    "gridsome": "^0.7.16",
     "gridsome-plugin-remark-prismjs-all": "^0.3.5",
     "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#master",
     "hooper": "^0.3.4",
@@ -34,6 +34,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/vue-fontawesome": "^0.1.9",
-    "gridsome-plugin-tailwindcss": "^2.2.48"
+    "gridsome-plugin-tailwindcss": "^2.2.48",
+    "tailwindcss-dark-mode": "^1.1.4"
   }
 }

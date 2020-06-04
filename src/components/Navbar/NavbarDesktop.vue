@@ -1,6 +1,6 @@
 <template>
     <nav
-      class="hidden md:block lg:block xl:block flex items-center justify-between flex-wrap container mx-auto py-3 z-20"
+      class="hidden md:block lg:block xl:block flex items-center justify-between flex-wrap container mx-auto py-3 z-20 dark:text-gray-400"
     >
       <div class="block flex-grow flex items-center w-auto mx-4">
         <div class="flex items-center flex-shrink-0 mr-6">
@@ -69,7 +69,7 @@
               </a>
 
               <div v-click-outside="onClickOutside"
-                class="py-4 mega-menu mb-16 border-t border-gray-200 shadow-xl bg-white" 
+                class="py-4 mega-menu mb-16 border-t border-gray-200 shadow-xl bg-white dark:bg-black dark:border-gray-900" 
                 v-bind:class="{
                   '' : showSubNavigation,
                   'hidden' : !showSubNavigation

@@ -6,14 +6,14 @@
           <div class="flex flex-wrap items-stretch w-full mb-4 relative">
             <div class="flex -mr-px">
               <span
-                class="flex items-center leading-normal rounded rounded-r-none border border-r-0 border-gray-500 px-3 whitespace-no-wrap text-gray-400"
+                class="flex items-center leading-normal rounded rounded-r-none border border-r-0 border-gray-500 px-3 whitespace-no-wrap text-gray-400 dark:bg-gray-900 dark:text-gray-700 dark:border-gray-700"
               >
                 <font-awesome :icon="['fas', 'search']" size="lg"></font-awesome>
               </span>
             </div>
             <input
               type="text"
-              class="flex-shrink flex-grow flex-auto text-gray-700 leading-normal w-px flex-1 border h-12 text-xl md:h-16 md:text-3xl border-l-0 focus:outline-none focus:shadow-none border-gray-500 rounded rounded-l-none px-3 relative"
+              class="flex-shrink flex-grow flex-auto text-gray-700 dark:text-gray-600 leading-normal w-px flex-1 border h-12 text-xl md:h-16 md:text-3xl border-l-0 focus:outline-none focus:shadow-none border-gray-500 dark:bg-gray-900 dark:border-gray-700 rounded rounded-l-none px-3 relative"
               placeholder="Search..."
               id="search"
               v-model="searchTerm"
@@ -34,15 +34,15 @@
                 :to="resultEntry.path"
                 
               >
-                <div class="h-full flex items-start hover:bg-gray-200 rounded-lg">
+                <div class="h-full flex items-start hover:bg-gray-200 dark:bg-gray-900 dark-hover:bg-gray-800 rounded-lg">
                   <div class="flex-grow px-6">
                     <h2
                       class="tracking-widest text-xs title-font font-medium text-indigo-500 mb-1"
                     >{{ resultEntry.node.category}}</h2>
                     <h1
-                      class="title-font text-xl font-medium text-gray-900 mb-3"
+                      class="title-font text-xl font-medium text-gray-900 dark:text-gray-400 mb-3"
                     >{{ resultEntry.title }}</h1>
-                    <p class="leading-relaxed mb-5">{{ resultEntry.node.excerpt }}</p>
+                    <p class="leading-relaxed mb-5 dark:text-gray-500">{{ resultEntry.node.excerpt }}</p>
                   </div>
                 </div>
               </g-link>

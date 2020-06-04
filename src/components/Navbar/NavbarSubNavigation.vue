@@ -38,7 +38,7 @@
         <h2 class="text-xl mt-2 mb-2">Tags</h2>
 
         <ul class="flex flex-wrap">
-          <li class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-4 mb-4 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full" v-for="tag in $static.tags.edges" :key="tag.node.id">
+          <li class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-4 mb-4 border hover:border-blue-500 border-gray-600 text-gray-700 dark:text-gray-400 rounded-full" v-for="tag in $static.tags.edges" :key="tag.node.id">
             <g-link :to="tag.node.path">{{ tag.node.title }}</g-link>
           </li>
         </ul>
