@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-full mb-2 overflow-x-hidden">
+    <div class="w-full mb-2 overflow-x-hidden dark:text-gray-400">
       <h2 class="text-xl my-0">Navigation</h2>
       <div class="menu-links">
         <ul>
@@ -63,7 +63,7 @@
         </ul>
       </div>
     </div>
-    <div class="mobileSubnav pl-2">
+    <div class="mobileSubnav pl-2 dark:text-gray-400">
       <subnavigation />
     </div>
   </div>

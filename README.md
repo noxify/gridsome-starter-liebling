@@ -1,5 +1,3 @@
-> **Current State: Work in Progress**
-
 # Gridsome Liebling Starter
 
 Grisome starter based on [Ghost Liebling](https://github.com/eddiesigner/liebling) and tailwindcss.
@@ -13,6 +11,7 @@ Soon
 * Tailwindcss 
 * Light and Dark Mode with auto detect  
 * v-tooltip
+* Mega Menu support
 * SCSS
 * Markdown
 * Tags
@@ -21,6 +20,9 @@ Soon
 * Blog
 * About Page
 * Pagination
+* Medium Zoom
+* Updated Image Processing to return the `figure` element with caption
+* Full Text Search powered by [gridsome-plugin-flexsearch](https://github.com/thetre97/gridsome-plugin-flexsearch)
 
 ## Plugins
 
@@ -28,6 +30,7 @@ With Gridsome offering a plugin-rich ecosystem, there are a few key plugins that
 
 - [Gridsome Source Filesystem](https://gridsome.org/plugins/@gridsome/source-filesystem) Transform files into content that can be fetched with GraphQL in your components.
 - [gridsome-source-static-meta](https://gridsome.org/plugins/gridsome-source-static-meta) source plugin that converts values in JSON and/or YAML files into keys on the global GraphQL metaData query.
+- [gridsome-plugin-flexsearch](https://github.com/thetre97/gridsome-plugin-flexsearch) Add lightning fast search to Gridsome with FlexSearch
 
 
 ## Install
