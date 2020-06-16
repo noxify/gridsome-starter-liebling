@@ -30,6 +30,7 @@ import {
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import ClickOutside from 'v-click-outside'
+import InfiniteLoading from 'vue-infinite-loading'
 
 
 config.autoAddCss = false;
@@ -56,5 +57,6 @@ export default function (Vue, {
     Vue.directive('tooltip', VTooltip)
     Vue.directive('close-popover', VClosePopover)
     Vue.component('v-popover', VPopover)
+    Vue.use(InfiniteLoading)
   }
 }
