@@ -1,3 +1,6 @@
+> **We have moved the Repository to https://github.com/jammeryhq**
+> * https://github.com/jammeryhq/gridsome-starter-liebling
+
 # Gridsome Liebling Starter
 
 Grisome starter based on [Ghost Liebling](https://github.com/eddiesigner/liebling) and tailwindcss.
